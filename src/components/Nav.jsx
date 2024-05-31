@@ -14,6 +14,10 @@ const Nav=()=>{
                 <NavLink to="/about" className={({isActive})=>isActive?"text-blue-500":"text-black"}>
                     About
                 </NavLink>
+
+                <a className="text-black" target="_blank" href="https://drive.google.com/file/d/1KCCqY3KOLSvgTKgN8w4QgqIBHvvm9jfb/view">
+                    Resume
+                </a>
             </nav>
         </header>
     );
