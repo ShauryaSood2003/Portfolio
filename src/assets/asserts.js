@@ -94,9 +94,8 @@ export const projects=[
         logo:"https://media.tenor.com/_Nd94SyZ3vYAAAAC/windows-logo-zoom-in.gif"
     }
 ]
-export const skills=[
+export const backendSkills=[
     "https://static-00.iconduck.com/assets.00/next-js-icon-512x512-zuauazrk.png",
-    "https://cdn.iconscout.com/icon/free/png-256/free-react-4-1175110.png",
     "https://static-00.iconduck.com/assets.00/nodejs-icon-256x256-gr1cgkn3.png",
     "https://cdn.iconscout.com/icon/free/png-256/free-postman-3628992-3030217.png",
     "https://static-00.iconduck.com/assets.00/aws-icon-2048x2048-ptyrjxdo.png",
@@ -105,14 +104,25 @@ export const skills=[
     "https://static-00.iconduck.com/assets.00/sql-database-generic-icon-1521x2048-d0vdpxpg.png",
     "https://static-00.iconduck.com/assets.00/redis-original-wordmark-icon-2045x2048-nz2tg5u6.png",
     "https://static-00.iconduck.com/assets.00/docker-icon-2048x1753-uguk29a7.png",
+    "https://static-00.iconduck.com/assets.00/kubernetes-icon-512x499-3mjeet3c.png",
     "https://static-00.iconduck.com/assets.00/cloudflare-icon-512x512-c1lpcyo0.png",
-    "https://cdn-icons-png.flaticon.com/512/174/174854.png",
-    "https://static-00.iconduck.com/assets.00/javascript-js-icon-2048x2048-nyxvtvk0.png",
-    "https://static-00.iconduck.com/assets.00/typescript-icon-icon-1024x1024-vh3pfez8.png",
     "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_ejs_icon_130626.png",
-    "https://shadowblood.gallerycdn.vsassets.io/extensions/shadowblood/tailwind-moon/3.0.2/1673948732518/Microsoft.VisualStudio.Services.Icons.Default",
-    "https://static-00.iconduck.com/assets.00/material-ui-icon-512x406-fhnu85xg.png",
-    "https://static-00.iconduck.com/assets.00/brand-threejs-icon-1024x1024-7asgzc4z.png",
     "https://cdn-icons-png.flaticon.com/512/1493/1493169.png",
+    "https://static-00.iconduck.com/assets.00/integration-testing-icon-512x512-uwux648h.png"
+]
+export const frontEndSkills=[
+    "https://static-00.iconduck.com/assets.00/next-js-icon-512x512-zuauazrk.png",
+    "https://cdn.iconscout.com/icon/free/png-256/free-react-4-1175110.png",
+    "https://static-00.iconduck.com/assets.00/typescript-icon-icon-1024x1024-vh3pfez8.png",
+    "https://static-00.iconduck.com/assets.00/javascript-js-icon-2048x2048-nyxvtvk0.png",
+    "https://static-00.iconduck.com/assets.00/brand-threejs-icon-1024x1024-7asgzc4z.png",
+    "https://static-00.iconduck.com/assets.00/framer-icon-1024x1024-glsjt6oa.png",
+    "https://static-00.iconduck.com/assets.00/redux-icon-512x486-1n8k02rk.png",
+    "https://seeklogo.com/images/R/recoil-js-logo-0FA612F129-seeklogo.com.png",
+    "https://shadowblood.gallerycdn.vsassets.io/extensions/shadowblood/tailwind-moon/3.0.2/1673948732518/Microsoft.VisualStudio.Services.Icons.Default",
+    "https://cdn-icons-png.flaticon.com/512/174/174854.png",
+    "https://static-00.iconduck.com/assets.00/file-type-css-icon-1806x2048-r5fwjl3p.png",
     "https://icons.getbootstrap.com/assets/img/icons-hero.png",
+    "https://static-00.iconduck.com/assets.00/material-ui-icon-256x204-cdk2ge8h.png",
+
 ]

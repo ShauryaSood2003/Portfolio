@@ -1,4 +1,4 @@
-import { skills } from "../../assets/asserts";
+import { backendSkills,frontEndSkills } from "../../assets/asserts";
 import { useEffect } from "react";
 
 import Footer from "../Footer"
@@ -73,26 +73,39 @@ const About =()=>{
                 />
               </div>
             </div>
-       
+
             <div className="lg:mt-30 mt-20 lg:mb-20 mb-6">
-                <h1 className="lg:text-2xl text-xl font-semibold">Skills</h1>
+                <h1 className="lg:text-2xl text-xl font-semibold">FrontEnd Skills</h1>
                 <div className="flex lg:gap-24 gap-8 mt-10 flex-wrap">
                     
                         {
-                            skills.map((element)=>{
+                            frontEndSkills.map((element)=>{
                                 return(<img src={element} className="w-23 h-20 rounded-sm hid animate_logo" alt="temp_image"/>);
                             })
                         }
                     
                 </div>
             </div>
-            
+       
+            <div className="lg:mt-30 mt-20 lg:mb-20 mb-6">
+                <h1 className="lg:text-2xl text-xl font-semibold">BackEnd Skills</h1>
+                <div className="flex lg:gap-24 gap-8 mt-10 flex-wrap">
+                    
+                        {
+                          backendSkills.map((element)=>{
+                                return(<img src={element} className="w-23 h-20 rounded-sm hid animate_logo" alt="temp_image"/>);
+                            })
+                        }
+                    
+                </div>
+            </div>
+
             
             <div className="lg:mb-20 mb-6">
                 <h1 className="lg:text-2xl text-xl font-semibold mb-10">Education</h1>
                 <div className="flex gap-10 flex-wrap">  
                         <Education 
-                              link="https://niecdelhi.ac.in/wp-content/uploads/2018/07/logo-adgitm.jpg" 
+                              link="https://images.shiksha.com/mediadata/images/1674199807phpl6t19N.jpeg" 
                               course="B.Tech (CSE)" 
                               institute="Dr Akhilesh Das Gupta Institute of Technology" 
                               duration="2021 - 2025" 
