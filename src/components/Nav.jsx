@@ -15,7 +15,7 @@ const Nav=()=>{
                     About
                 </NavLink>
 
-                <a className="text-black" target="_blank" href="https://drive.google.com/file/d/1KCCqY3KOLSvgTKgN8w4QgqIBHvvm9jfb/view">
+                <a className="text-black" target="_blank" href="https://drive.google.com/file/d/1QTAthoWZTXq2kYoAlgVSTlxrDSpLqrM_/view">
                     Resume
                 </a>
             </nav>

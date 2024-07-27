@@ -30,7 +30,16 @@ export const projects=[
         
     },
     {
-        title:"React-based Myntra Clone",
+        title:"ChatIo",
+        subTitle:"Secure Messaging and Media Sharing Made Easy!",
+        duration:"Apr 2023 - Jun 2023",
+        text:"This fully functional clone incorporates React with Material UI for the front end, Node.js and Express for the back end, and Socket.IO for real-time communication. With Google Authentication for user registration and MongoDB for data storage, this clone offers a secure and seamless messaging experience, enabling users to communicate, exchange text, images, and even PDF files effortlessly.",
+        link:"https://shauryasoodchatio.netlify.app/",
+        color:"#ebf8f6",
+        logo:"https://media.tenor.com/LAsl9TJCNH4AAAAC/whatsapp-chat.gif"
+    },
+    {
+        title:"React-based Myntra",
         subTitle:"E-commerce Web Application",
         duration:"Jul 2023 - Jul 2023",
         text:"This e-commerce web application faithfully replicates the core functionalities of the popular Myntra platform, providing users with a seamless shopping experience.",
@@ -47,15 +56,6 @@ export const projects=[
         link:"https://rowan-admitted-seeker.glitch.me/",
         color:"#ebf8f6",
         logo:"https://media.tenor.com/bj5M_AhN8DgAAAAC/fruits-dance.gif"
-    },
-    {
-        title:"WhatsApp Clone",
-        subTitle:"Secure Messaging and Media Sharing Made Easy!",
-        duration:"Apr 2023 - Jun 2023",
-        text:"This fully functional clone incorporates React with Material UI for the front end, Node.js and Express for the back end, and Socket.IO for real-time communication. With Google Authentication for user registration and MongoDB for data storage, this clone offers a secure and seamless messaging experience, enabling users to communicate, exchange text, images, and even PDF files effortlessly.",
-        link:"",
-        color:"#ebf8f6",
-        logo:"https://media.tenor.com/LAsl9TJCNH4AAAAC/whatsapp-chat.gif"
     },
     {
         title:"Earlier Portfolio Showcase",
@@ -108,7 +108,8 @@ export const backendSkills=[
     "https://static-00.iconduck.com/assets.00/cloudflare-icon-512x512-c1lpcyo0.png",
     "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_ejs_icon_130626.png",
     "https://cdn-icons-png.flaticon.com/512/1493/1493169.png",
-    "https://static-00.iconduck.com/assets.00/integration-testing-icon-512x512-uwux648h.png"
+    "https://static-00.iconduck.com/assets.00/integration-testing-icon-512x512-uwux648h.png",
+    "https://static-00.iconduck.com/assets.00/file-type-capacitor-icon-2048x2048-uw2uf34a.png"
 ]
 export const frontEndSkills=[
     "https://static-00.iconduck.com/assets.00/next-js-icon-512x512-zuauazrk.png",
@@ -118,11 +119,12 @@ export const frontEndSkills=[
     "https://static-00.iconduck.com/assets.00/brand-threejs-icon-1024x1024-7asgzc4z.png",
     "https://static-00.iconduck.com/assets.00/framer-icon-1024x1024-glsjt6oa.png",
     "https://static-00.iconduck.com/assets.00/redux-icon-512x486-1n8k02rk.png",
-    "https://seeklogo.com/images/R/recoil-js-logo-0FA612F129-seeklogo.com.png",
+    "https://cdn.worldvectorlogo.com/logos/recoil-js.svg",
     "https://shadowblood.gallerycdn.vsassets.io/extensions/shadowblood/tailwind-moon/3.0.2/1673948732518/Microsoft.VisualStudio.Services.Icons.Default",
     "https://cdn-icons-png.flaticon.com/512/174/174854.png",
     "https://static-00.iconduck.com/assets.00/file-type-css-icon-1806x2048-r5fwjl3p.png",
     "https://icons.getbootstrap.com/assets/img/icons-hero.png",
+    "https://static-00.iconduck.com/assets.00/ionic-icon-512x512-tuppob77.png",
     "https://static-00.iconduck.com/assets.00/material-ui-icon-256x204-cdk2ge8h.png",
 
 ]
