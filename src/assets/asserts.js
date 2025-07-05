@@ -1,52 +1,103 @@
 export const projects=[
     {
-        title:"Blogs.Com",
-        subTitle:"A Blogging application",
-        duration:"March 2024 - March 2024",
-        text:"This serverless blogging application leverages Cloudflare for its backend, providing users with an end-to-end deployed platform. Users can sign in, read new blogs, and create their own content seamlessly. With the power of serverless architecture, the application ensures scalability, reliability, and efficiency, offering a smooth and hassle-free blogging experience.",
-        link:"https://shauryasoodblogsfullstack.netlify.app/",
-        color:"#b0f7dc",
-        logo:"https://d1jj76g3lut4fe.cloudfront.net/uploads/images/637266f2edcfd_946538277402aivshumans.gif"
-        
+        title:"91Springboard",
+        subTitle:"Enterprise Coworking Platform",
+        duration:"May 2024 - Present",
+        description:"Built end-to-end cross-platform application for India's largest coworking company serving enterprise clients including Google, Amazon, and Flipkart.",
+        techStack: ["React Native", "Node.js", "PostgreSQL", "Redis", "AWS", "Ionic", "Capacitor"],
+        features: [
+            "Cross-platform app (iOS, Android, Web)",
+            "Real-time booking management system",
+            "Multi-credit payment logic",
+            "Advanced scheduling & cancellation"
+        ],
+        metrics: {
+            users: "60K+",
+            organizations: "29K+",
+            dailyBookings: "1000+",
+            totalBookings: "30K+"
+        },
+        role: "Lead Developer",
+        liveLink:"https://app.91springboard.com/",
+        githubLink: null,
+        type: "Client Work",
+        color:"#fef3c7",
+        logo:"https://alpha.91springboard.com/assets/logo91S_black-Bm-WvmqZ.png"
     },
     {
         title:"CodeCrack",
-        subTitle:"Coding Platform",
-        duration:"May 2024 - May 2024",
-        text:"This microserviced coding platform, CodeCrack, enables users to log in, run their code, and receive real-time feedback on the success or failure of their projects, providing a seamless and efficient coding experience.",
-        link:"https://github.com/ShauryaSood2003/CodeCrack",
+        subTitle:"Competitive Coding Platform",
+        duration:"May 2024 - Present",
+        description:"Building a gamified coding platform with real-time code execution. New vision includes CodeWars for 1v1 competitive contests with token rewards.",
+        techStack: ["React", "Node.js", "MongoDB", "Docker", "WebSockets", "Redis", "RabbitMQ"],
+        features: [
+            "Real-time code execution engine",
+            "Multi-language support",
+            "CodeWars 1v1 battles",
+            "Token reward system"
+        ],
+        metrics: {
+            languages: "5+",
+            executionTime: "<2s",
+            concurrent: "100+",
+            uptime: "99.9%"
+        },
+        role: "Founder & Full Stack Developer",
+        liveLink: null,
+        githubLink:"https://github.com/ShauryaSood2003/CodeCrack",
+        type: "Personal Project",
         color:"#c9d7f2",
         logo:"https://assets.leetcode.com/static_assets/others/LeetCode_75.gif"
-        
     },
     {
         title:"PayWay",
-        subTitle:"End to end payment Application",
-        duration:"April 2024 - April 2024",
-        text:"This microserviced payment application allows users to add funds from their bank, support peer-to-peer transfers, send money to merchants using mobile numbers, and view their transaction history on the home page. The platform includes separate interfaces for users and merchants, ensuring a secure and efficient financial experience.",
-        link:"https://github.com/ShauryaSood2003/PayWay",
+        subTitle:"Fintech Payment Platform",
+        duration:"April 2024 - May 2024",
+        description:"Comprehensive fintech solution with P2P transfers, merchant payments, and real-time transaction tracking.",
+        techStack: ["Next.js", "Node.js", "PostgreSQL", "Prisma", "WebSockets", "Tailwind"],
+        features: [
+            "Bank integration & transfers",
+            "P2P payment system",
+            "Merchant dashboard",
+            "Real-time notifications"
+        ],
+        metrics: {
+            transactionSpeed: "<3s",
+            security: "2FA",
+            apis: "15+",
+            coverage: "Pan India"
+        },
+        role: "Full Stack Developer",
+        liveLink: null,
+        githubLink:"https://github.com/ShauryaSood2003/PayWay",
+        type: "Learning Project",
         color:"#fcfdff",
         logo:"https://cdn.dribbble.com/users/1280935/screenshots/6974685/media/ec4c386222b837da0ff6eabec3f59ba3.gif"
-        
     },
     {
         title:"ChatIo",
-        subTitle:"Secure Messaging and Media Sharing Made Easy!",
+        subTitle:"Real-time Messaging Platform",
         duration:"Apr 2023 - Jun 2023",
-        text:"This fully functional clone incorporates React with Material UI for the front end, Node.js and Express for the back end, and Socket.IO for real-time communication. With Google Authentication for user registration and MongoDB for data storage, this clone offers a secure and seamless messaging experience, enabling users to communicate, exchange text, images, and even PDF files effortlessly.",
-        link:"https://shauryasoodchatio.netlify.app/",
+        description:"WhatsApp clone with real-time messaging, media sharing, and Google authentication. Full-stack implementation with modern tech stack.",
+        techStack: ["React", "Material UI", "Node.js", "Socket.IO", "MongoDB", "Google OAuth"],
+        features: [
+            "Real-time messaging",
+            "Media & PDF sharing",
+            "Google authentication",
+            "Persistent chat history"
+        ],
+        metrics: {
+            responseTime: "<100ms",
+            fileSize: "10MB",
+            concurrent: "50+",
+            uptime: "99%"
+        },
+        role: "Full Stack Developer",
+        liveLink:"https://shauryasoodchatio.netlify.app/",
+        githubLink: "https://github.com/ShauryaSood2003/ChatIo",
+        type: "Personal Project",
         color:"#ebf8f6",
         logo:"https://media.tenor.com/LAsl9TJCNH4AAAAC/whatsapp-chat.gif"
-    },
-    {
-        title:"React-based Myntra",
-        subTitle:"E-commerce Web Application",
-        duration:"Jul 2023 - Jul 2023",
-        text:"This e-commerce web application faithfully replicates the core functionalities of the popular Myntra platform, providing users with a seamless shopping experience.",
-        link:"https://shauryasood.netlify.app/",
-        color:"#f8f6f8",
-        logo:"https://cdn.dribbble.com/users/1873555/screenshots/11262329/media/64b6719e36e17eeedbb41eb47624a8ba.gif"
-        
     },
     {
         title:"Nutrition App",
@@ -94,37 +145,44 @@ export const projects=[
         logo:"https://media.tenor.com/_Nd94SyZ3vYAAAAC/windows-logo-zoom-in.gif"
     }
 ]
-export const backendSkills=[
-    "https://static-00.iconduck.com/assets.00/next-js-icon-512x512-zuauazrk.png",
-    "https://static-00.iconduck.com/assets.00/nodejs-icon-256x256-gr1cgkn3.png",
-    "https://cdn.iconscout.com/icon/free/png-256/free-postman-3628992-3030217.png",
-    "https://static-00.iconduck.com/assets.00/aws-icon-2048x2048-ptyrjxdo.png",
-    "https://static-00.iconduck.com/assets.00/database-mongo-db-icon-1954x2048-wrw32e9l.png",
-    "https://static-00.iconduck.com/assets.00/postgresql-icon-1987x2048-v2fkmdaw.png",
-    "https://static-00.iconduck.com/assets.00/sql-database-generic-icon-1521x2048-d0vdpxpg.png",
-    "https://static-00.iconduck.com/assets.00/redis-original-wordmark-icon-2045x2048-nz2tg5u6.png",
-    "https://static-00.iconduck.com/assets.00/docker-icon-2048x1753-uguk29a7.png",
-    "https://static-00.iconduck.com/assets.00/kubernetes-icon-512x499-3mjeet3c.png",
-    "https://static-00.iconduck.com/assets.00/cloudflare-icon-512x512-c1lpcyo0.png",
-    "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_ejs_icon_130626.png",
-    "https://cdn-icons-png.flaticon.com/512/1493/1493169.png",
-    "https://static-00.iconduck.com/assets.00/integration-testing-icon-512x512-uwux648h.png",
-    "https://static-00.iconduck.com/assets.00/file-type-capacitor-icon-2048x2048-uw2uf34a.png"
-]
-export const frontEndSkills=[
-    "https://static-00.iconduck.com/assets.00/next-js-icon-512x512-zuauazrk.png",
-    "https://cdn.iconscout.com/icon/free/png-256/free-react-4-1175110.png",
-    "https://static-00.iconduck.com/assets.00/typescript-icon-icon-1024x1024-vh3pfez8.png",
-    "https://static-00.iconduck.com/assets.00/javascript-js-icon-2048x2048-nyxvtvk0.png",
-    "https://static-00.iconduck.com/assets.00/brand-threejs-icon-1024x1024-7asgzc4z.png",
-    "https://static-00.iconduck.com/assets.00/framer-icon-1024x1024-glsjt6oa.png",
-    "https://static-00.iconduck.com/assets.00/redux-icon-512x486-1n8k02rk.png",
-    "https://cdn.worldvectorlogo.com/logos/recoil-js.svg",
-    "https://shadowblood.gallerycdn.vsassets.io/extensions/shadowblood/tailwind-moon/3.0.2/1673948732518/Microsoft.VisualStudio.Services.Icons.Default",
-    "https://cdn-icons-png.flaticon.com/512/174/174854.png",
-    "https://static-00.iconduck.com/assets.00/file-type-css-icon-1806x2048-r5fwjl3p.png",
-    "https://icons.getbootstrap.com/assets/img/icons-hero.png",
-    "https://static-00.iconduck.com/assets.00/ionic-icon-512x512-tuppob77.png",
-    "https://static-00.iconduck.com/assets.00/material-ui-icon-256x204-cdk2ge8h.png",
+export const skillsData = {
+    frontend: [
+        { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", level: "Expert" },
+        { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", level: "Expert" },
+        { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", level: "Advanced" },
+        { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", level: "Expert" },
+        { name: "Three.js", icon: "https://global.discourse-cdn.com/standard17/uploads/threejs/original/2X/e/e4f86d2200d2d35c30f7b1494e96b9595ebc2751.png", level: "Intermediate" },
+        { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg", level: "Expert" },
+        { name: "Redux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg", level: "Advanced" },
+        { name: "Recoil", icon: "https://recoiljs.org/img/logo.svg", level: "Intermediate" },
+        { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", level: "Expert" },
+        { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", level: "Expert" },
+        { name: "Ionic", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original.svg", level: "Advanced" },
+        { name: "Material UI", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg", level: "Advanced" }
+    ],
+    backend: [
+        { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", level: "Expert" },
+        { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", level: "Expert" },
+        { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", level: "Advanced" },
+        { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", level: "Advanced" },
+        { name: "Redis", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg", level: "Intermediate" },
+        { name: "Prisma", icon: "https://img.icons8.com/fluency/48/000000/database.png", level: "Advanced" },
+        { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg", level: "Intermediate" },
+        { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg", level: "Intermediate" },
+        { name: "Cloudflare", icon: "https://img.icons8.com/color/48/000000/cloudflare.png", level: "Intermediate" },
+        { name: "Postman", icon: "https://img.icons8.com/dusk/64/000000/postman-api.png", level: "Advanced" },
+        { name: "Capacitor", icon: "https://capacitorjs.com/assets/img/meta/capacitor-og.png", level: "Advanced" }
+    ],
+    aitools: [
+        { name: "Claude AI", icon: "https://img.icons8.com/fluency/48/000000/chatbot.png", level: "Expert" },
+        { name: "Cursor IDE", icon: "https://img.icons8.com/fluency/48/000000/code.png", level: "Expert" },
+        { name: "V0.dev", icon: "https://img.icons8.com/fluency/48/000000/web-design.png", level: "Advanced" },
+        { name: "GitHub Copilot", icon: "https://img.icons8.com/fluency/48/000000/github.png", level: "Advanced" },
+        { name: "ChatGPT", icon: "https://img.icons8.com/fluency/48/000000/chat.png", level: "Advanced" },
+        { name: "Prompt Engineering", icon: "https://img.icons8.com/fluency/48/000000/artificial-intelligence.png", level: "Expert" }
+    ]
+};
 
-]
+// Keep backward compatibility
+export const backendSkills = skillsData.backend.map(skill => skill.icon);
+export const frontEndSkills = skillsData.frontend.map(skill => skill.icon);

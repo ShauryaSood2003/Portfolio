@@ -19,33 +19,33 @@ const HomeInfo=({currentStage})=>{
         1:
         (
             <h1 
-                className="sm:text-xl sm:leading-snug text-center neo-brutalism-blue text-white py-4 px-8 mx-5"
+                className="text-lg sm:text-xl sm:leading-snug text-center neo-brutalism-blue text-white py-3 sm:py-4 px-4 sm:px-8 mx-2 sm:mx-5"
             >
-                Hi, Im <span className="font-bold">Shaurya</span> 🙋‍♂️
+                Hi, I'm <span className="font-bold">Shaurya Sood</span> 
                 <br/>
-                A Full Stack Developer 🖥️
+                <span className="text-xs sm:text-sm">Senior Full Stack Developer | Building Scalable SaaS Solutions</span>
             </h1>
         ),
         2:(
             <InfoBox 
-            text="My goal is to blend creativity with functionality to deliver engaging and user-friendly applications."
-            btnText="Learn More"
+            text="From intern to core product owner in 12 months. I deliver high-scale products end-to-end with modern tech stacks."
+            btnText="Explore My Journey"
             link="/about"
             />
             
         ),
         3:(
             <InfoBox 
-            text="Explore my work and discover the projects that have shaped my skills along the way."
-            btnText="Visit my Portfolio"
+            text="Led production systems processing more 25K+ bookings. Used by the organizations like Google, Amazon & Flipkart."
+            btnText="View My Work"
             link="/project"
             />
         ),
         
         4:(
             <InfoBox 
-            text="Feel free to reach out if you have a project in mind, want to discuss technology, or just want to say hello."
-            btnText="Contact Me "
+            text="Looking for a senior developer who can own complex projects? Let's discuss how I can contribute to your team."
+            btnText="Get In Touch"
             link="/contact"
             />
         ),
