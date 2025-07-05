@@ -1,5 +1,5 @@
 import { a } from "@react-spring/three";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 
@@ -13,20 +13,22 @@ const Island=({isRotating,setIsRotating,setCurrentStage, ...props})=> {
     const dampingFactor=0.95;
     const { nodes, materials } = useGLTF(islandScene);
 
-    const handlePointerDown=(e)=>{
+    const handlePointerDown = useCallback((e)=>{
       e.stopPropagation();
       e.preventDefault();
       setIsRotating(true);
       const clientX=e.touches?e.touches[0].clientX:e.clientX;
 
       lastX.current=clientX;
-    }
-    const handlePointerUp=(e)=>{
+    }, [setIsRotating]);
+
+    const handlePointerUp = useCallback((e)=>{
       e.stopPropagation();
       e.preventDefault();
       setIsRotating(false);
-    }
-    const handlePointerMove=(e)=>{
+    }, [setIsRotating]);
+
+    const handlePointerMove = useCallback((e)=>{
       e.stopPropagation();
       e.preventDefault();
       if(isRotating) {
@@ -38,8 +40,9 @@ const Island=({isRotating,setIsRotating,setCurrentStage, ...props})=> {
         lastX.current=clientX;
         rotationSpeed.current=delta*0.01*Math.PI;
       }
-    }
-    const handleKeyDown = (event) => {
+    }, [isRotating, viewport.width]);
+
+    const handleKeyDown = useCallback((event) => {
       if (event.key === "ArrowLeft") {
         if (!isRotating) setIsRotating(true);
 
@@ -51,14 +54,13 @@ const Island=({isRotating,setIsRotating,setCurrentStage, ...props})=> {
         islandRef.current.rotation.y -= 0.005 * Math.PI;
         rotationSpeed.current = -0.007;
       }
-    };
+    }, [isRotating, setIsRotating]);
       
-        
-    const handleKeyUp = (event) => {
+    const handleKeyUp = useCallback((event) => {
       if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
         setIsRotating(false);
       }
-    };
+    }, [setIsRotating]);
       
     useEffect(()=>{
       const canvas=gl.domElement;
