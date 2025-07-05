@@ -1,0 +1,226 @@
+ok so i have this porfolio website that i have here i created this when i was in college 3rd year start now even my 4th year ended and also got a full time job but
+the website is still the same boring website, i want you use what we have and the additional info i provided and update the web ui and design and all keeping the exiting features
+in it but make them also better make sure it look profetional now, now i am working as a full time empyee and looking for more senior roles 
+
+for ref here is my new resume: 
+
+SHAURYA SOOD
+FULL STACK DEVELOPER
+CONTACT
+PROFILE
+shauryasood293@gmail.comPortfolio Website
+http://www.linkedin.com/in/shaurya-
+sood-87b968208I am a dedicated software engineer with a vision for creating innovative solutions and
+a passion for leveraging technology to solve complex problems efficiently.
+https://github.com/ShauryaSood2003With a strong background in software development and a commitment to continuous
+learning, I strive to push the boundaries of what's possible.
+https://twitter.com/ShauyaSood
+Pitampura, New Delhi
+EXPERIENCE
+Seniot Full Stack Developer @BurdenOff (1 May 2025 - Present)
+SKILLS
+Working on a Cross Platform Application for the clients
+React JS, Next JS, Ionic & Capacitor
+Node Js, Hono, Postman Api, GraphQL
+Working on AI Powered SaaS Application for the company
+Junior Full Stack Developer @BurdenOff (1 Nov 2024 - 31 Apr 2025)
+MongoDB, Prisma, Postgres, SQLWorking on a Cross Platform Application for the clients
+Redis, Pub/Sub, WebSocketWorking on AI Powered SaaS Application for the company
+Docker, Cloudflare, AWS
+Full Stack Developer Intern @BurdenOff (8 July 2024 - 31 Oct 2025)
+HTML, JavaScript, TypeScript, EJSWorking on a Cross Platform Application for the clients
+Redux, RecoilWorking on AI Powered SaaS Application for the company
+Css,ThreeJs, Tailwind Css, Mui
+EDUCATION
+B.Tech (CSE)
+Guru Gobind Singh Indraprastha
+University
+(ADGITM)
+2021 - 2025
+CGPA: 9.23
+12th Class
+DL DAV MODEL SCHOOL
+2009 - 2021
+Percentage 93.2%
+PROJECTS
+91Springboard(Clinet Work)[link: https://app.91springboard.com/]
+Build end to end app(ios and android) and web portal for the coworking 
+organization , handling over 1000 bookings per date with more then 60k user
+and 29k org, processed more then 30k bookings for the cowork thought the new
+app. Worked on building critical features like booking,cancelation, reshedule,
+multi credit logic.
+May 2024 - May-2024
+CodeCrack (GitHub)[link: https://github.com/ShauryaSood2003/CodeCrack] here this is also now i am buling as my personal project with a vision to create it as a new platform with new features like, codeWars(to have a one on one compiditive code contest and win the token)
+my new vision is to gamify the coding experience with codeWars as a new feature in code crack
+This microserviced coding platform, CodeCrack, enables users to log in, run
+their code, and receive real-time feedback on the success or failure of their
+code, providing a seamless and efficient coding experience.
+Fintech Application (GitHub)
+this was more like a expirence for me that help me later in the comany i worked to handle the credits and finalcial part of the clinet project 
+April 2024 - May-2024
+Payment application “PayWay” featuring user services like bank transfers, P2P
+transactions, and merchant transfers, alongside a WebSocket-enabled merchant
+dashboard for real-time transaction updates.
+Chat Messenger (Deployed) more like a copy of whatapp one of my very earlie project where i learnied the conectp of websockets!
+Apr 2023 - Jun 2023
+This fully functional clone incorporates React, Node.js, Socket.IO, Secure
+Google Authentication, Media Sharing, Persistent Chat History
+LANGUAGES
+CERTIFICATION
+Full Stack Developer Cohort 2
+EnglishCertification from 100xDevs
+HindiArtifical Intelligence Analyst from IBM
+Certification from IBM
+
+
+
+now i am a senior dev in full stack developemndt build one app (ios and web) and web portal for the clinet handling like 
+
+some info about me also1) End-to-End Ownership
+Took projects from zero to production launch.
+
+Personally handled:
+
+Architecture design (central server, credits system).
+
+Backend (Node/TS/Python).
+
+Frontend (Tailwind, React).
+
+DevOps (deployments, debugging live issues).
+
+Example: Launched a booking platform handling 25K+ transactions with high-profile clients (Google, Amazon, Flipkart).
+
+💡 How to phrase it:
+
+“Delivered high-scale SaaS products end-to-end—from architecture to deployment—under tight timelines in a 14-person startup.”
+
+⚡ 2) High Throughput + AI Productivity
+You are not just a coder—you learned how to leverage tools like:
+
+Cursor
+
+V0.dev
+
+AI code generation
+
+This allowed you to 3–4x your delivery speed and optimize complex flows.
+
+💡 How to phrase it:
+
+“Accelerated development cycles by integrating AI-assisted coding workflows, reducing delivery time for complex features from days to hours.”
+
+🔍 3) Production Debugging & Firefighting
+You’ve handled real-world issues in live environments, like:
+
+Query optimization (reducing 30 DB calls to 3).
+
+Scaling bottlenecks (parallel bookings, locking issues).
+
+Server outages during high traffic.
+
+You have the mindset: “I will stay until it works.”
+
+💡 How to phrase it:
+
+“Led troubleshooting and optimization of production systems processing thousands of concurrent transactions.”
+
+🧠 4) Business & Product Understanding
+You understand not just code, but why the code matters:
+
+How billing works.
+
+How credits logic affects revenue.
+
+How product success determines company stability.
+
+You directly talked to clients, gathered requirements, and iterated.
+
+💡 How to phrase it:
+
+“Worked closely with stakeholders to align technical implementation with business objectives.”
+
+🏗️ 5) Multi-Disciplinary Skillset
+In big companies, people specialize narrowly.
+
+You have:
+
+Backend dev skills.
+
+Frontend dev skills.
+
+Some DevOps exposure.
+
+Client communication.
+
+Basic project management.
+
+💡 How to phrase it:
+
+“Versatile contributor across backend, frontend, and deployment workflows, bridging gaps between product and engineering.”
+
+🌱 6) Relentless Learning & Growth
+In 12 months, you went from a noob intern to the main person owning mission-critical systems.
+
+You taught yourself fast.
+
+You helped mentor new interns.
+
+💡 How to phrase it:
+
+“Progressed rapidly from intern to core team member by continuously learning and taking ownership of critical deliverables.”
+
+✨ Suggested Portfolio Website Sections
+Here’s how you can organize it:
+
+About Me
+
+Short bio, your passion for building scalable products.
+
+Core Strengths
+
+Summarize the bullets above.
+
+Selected Projects
+
+Booking Platform: 25K+ bookings, built end-to-end.
+
+Other SaaS products in progress.
+
+Skills
+
+Tech stack: Node.js, TypeScript, Tailwind, Docker, etc.
+
+Tools: Cursor, V0.dev, Prisma, etc.
+
+Growth Story
+
+“In 1 year, grew from intern to core product owner.”
+
+
+
+
+
+Compiled with problems:
+×
+ERROR
+[eslint] 
+src/components/Nav.jsx
+  Line 56:81:   'isActive' is not defined  no-undef
+  Line 57:87:   'isActive' is not defined  no-undef
+  Line 61:98:   'isActive' is not defined  no-undef
+  Line 62:26:   'isActive' is not defined  no-undef
+  Line 69:81:   'isActive' is not defined  no-undef
+  Line 70:87:   'isActive' is not defined  no-undef
+  Line 74:98:   'isActive' is not defined  no-undef
+  Line 75:26:   'isActive' is not defined  no-undef
+  Line 82:81:   'isActive' is not defined  no-undef
+  Line 83:87:   'isActive' is not defined  no-undef
+  Line 87:98:   'isActive' is not defined  no-undef
+  Line 88:26:   'isActive' is not defined  no-undef
+  Line 95:81:   'isActive' is not defined  no-undef
+  Line 96:87:   'isActive' is not defined  no-undef
+  Line 101:98:  'isActive' is not defined  no-undef
+  Line 102:26:  'isActive' is not defined  no-undef
+
+Search for the keywords to learn more about each error.

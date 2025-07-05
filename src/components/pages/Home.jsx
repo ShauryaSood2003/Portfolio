@@ -38,8 +38,8 @@ const Home =()=>{
     const [PlaneScale,PlanePosition]=adjustPlaneForScreenSize();
     const [isRotating,setIsRotating]=useState(false);
     return(
-        <section className="w-full h-screen relative">
-            <div className="absolute flex justify-center items-center top-28 left-0 right-0 z-10 text-blue-500">
+        <section className="w-full h-screen relative overflow-hidden">
+            <div className="absolute flex justify-center items-center top-20 sm:top-28 left-0 right-0 z-10 text-blue-500 px-2">
                 {currentStage && <HomeInfo currentStage={currentStage}/>}
             </div>
             <Canvas
