@@ -5,9 +5,11 @@ import { Canvas } from "@react-three/fiber";
 import Dragon from "../../models/Dragon";
 import useAlert from "../../hooks/useAlert";
 import Alert from "../Alert";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 
 const Contact =()=>{
+    const { t } = useLanguage();
     const [form,setForm]=useState({name:'',email:'',message:''});
     const [isloading,setIsLoading]=useState(false);
     const [currentAnimation,setCurrentAnimation]=useState('idle');
@@ -39,7 +41,7 @@ const Contact =()=>{
             "CQHEgBBdazlz0FNeG"
         ).then((response)=>{
             console.log("Status: ",response.status);
-            showAlert({text:"Message send Successfully 👍",type:"success"});
+            showAlert({text:t('messageSent'),type:"success"});
             setTimeout(()=>{
                 setIsLoading(false);
                 setForm({name:'',email:"",message:""});
@@ -49,7 +51,7 @@ const Contact =()=>{
         }).catch((err)=>{
             setCurrentAnimation('idle');
             console.log("Error: ",err.message);
-            showAlert({text:"⚒️ Unable to send your message please try again later! ⚒️"});
+            showAlert({text:t('messageFailed')});
             setIsLoading(false);
             setTimeout(()=>{
                 setForm({name:'',email:"",message:""});
@@ -62,10 +64,9 @@ const Contact =()=>{
         <section className="relative flex flex-col lg:flex-row max-container">
             {alert.show && <Alert {...alert}/>}
             <div className=" flex-1 min-w-[50%] flex flex-col px-4 sm:px-0">
-                <h1 className="text-2xl sm:text-4xl font-semibold sm:leading-snug font-poppins bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">Let's Connect</h1>
-                <p className="text-gray-600 mt-3 mb-6 sm:mb-8 text-sm sm:text-base">
-                    Looking for a senior developer who can take ownership of complex projects? 
-                    I'd love to discuss how I can contribute to your team's success.
+                <h1 className="text-2xl sm:text-4xl font-semibold sm:leading-snug font-poppins bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-200 dark:to-gray-400 bg-clip-text text-transparent">{t('contactTitle')}</h1>
+                <p className="text-gray-600 dark:text-gray-400 mt-3 mb-6 sm:mb-8 text-sm sm:text-base">
+                    {t('contactIntro')}
                 </p>
                 <form
                     className="w-full flex gap-7 flex-col"
@@ -73,12 +74,12 @@ const Contact =()=>{
                     ref={formRef}
                 >
                 <div className="space-y-2">
-                    <label className="text-gray-700 font-semibold text-sm uppercase tracking-wider">Name</label>
+                    <label className="text-gray-700 dark:text-gray-300 font-semibold text-sm uppercase tracking-wider">{t('yourName')}</label>
                     <input 
-                        className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-blue-500 focus:bg-white focus:outline-none transition duration-200" 
+                        className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:border-blue-500 focus:bg-white dark:focus:bg-gray-700 focus:outline-none transition duration-200 dark:text-gray-200" 
                         type="text" 
                         name="name" 
-                        placeholder="John Doe"
+                        placeholder={t('yourName')}
                         required
                         value={form.name}
                         onChange={handleForm}
@@ -88,12 +89,12 @@ const Contact =()=>{
                 </div>
                 
                 <div className="space-y-2">
-                    <label className="text-gray-700 font-semibold text-sm uppercase tracking-wider">Email</label>
+                    <label className="text-gray-700 dark:text-gray-300 font-semibold text-sm uppercase tracking-wider">{t('yourEmail')}</label>
                     <input
-                        className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-blue-500 focus:bg-white focus:outline-none transition duration-200"
+                        className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:border-blue-500 focus:bg-white dark:focus:bg-gray-700 focus:outline-none transition duration-200 dark:text-gray-200"
                         name="email"
                         value={form.email}
-                        placeholder="john@company.com"
+                        placeholder={t('yourEmail')}
                         onChange={handleForm}
                         onFocus={handelFocus}
                         onBlur={handelBlur}
@@ -103,12 +104,12 @@ const Contact =()=>{
                 </div>
                 
                 <div className="space-y-2">
-                    <label className="text-gray-700 font-semibold text-sm uppercase tracking-wider">Message</label>
+                    <label className="text-gray-700 dark:text-gray-300 font-semibold text-sm uppercase tracking-wider">{t('yourMessage')}</label>
                     <textarea
-                        className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-blue-500 focus:bg-white focus:outline-none transition duration-200 resize-none"
+                        className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:border-blue-500 focus:bg-white dark:focus:bg-gray-700 focus:outline-none transition duration-200 resize-none dark:text-gray-200"
                         name="message"
                         value={form.message}
-                        placeholder="Tell me about your project or opportunity..."
+                        placeholder={t('yourMessage')}
                         onChange={handleForm}
                         onFocus={handelFocus}
                         onBlur={handelBlur}
@@ -130,9 +131,9 @@ const Contact =()=>{
                                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                             </svg>
-                            Sending Message...
+                            {t('sending')}
                         </span>
-                    ) : "Send Message"}
+                    ) : t('send')}
                 </button>
                 </form>
             </div>

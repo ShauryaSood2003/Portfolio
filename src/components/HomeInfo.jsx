@@ -1,5 +1,7 @@
 import {Link} from "react-router-dom";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { useLanguage } from "../contexts/LanguageContext";
+
 const InfoBox=({text,btnText,link})=>{
     return(
         <div className="info-box">
@@ -15,37 +17,39 @@ const InfoBox=({text,btnText,link})=>{
 }
 
 const HomeInfo=({currentStage})=>{
+    const { t } = useLanguage();
+    
     const renderContent={
         1:
         (
             <h1 
                 className="text-lg sm:text-xl sm:leading-snug text-center neo-brutalism-blue text-white py-3 sm:py-4 px-4 sm:px-8 mx-2 sm:mx-5"
             >
-                Hi, I'm <span className="font-bold">Shaurya Sood</span> 
+                {t('homeInfoGreeting')} <span className="font-bold">{t('homeInfoName')}</span> 
                 <br/>
-                <span className="text-xs sm:text-sm">Senior Full Stack Developer | Building Scalable SaaS Solutions</span>
+                <span className="text-xs sm:text-sm">{t('homeInfoTitle')}</span>
             </h1>
         ),
         2:(
             <InfoBox 
-            text="From intern to core product owner in 12 months. I deliver high-scale products end-to-end with modern tech stacks."
-            btnText="Explore My Journey"
+            text={t('homeInfoStage2')}
+            btnText={t('homeInfoStage2Btn')}
             link="/about"
             />
             
         ),
         3:(
             <InfoBox 
-            text="Led production systems processing more 25K+ bookings. Used by the organizations like Google, Amazon & Flipkart."
-            btnText="View My Work"
+            text={t('homeInfoStage3')}
+            btnText={t('homeInfoStage3Btn')}
             link="/project"
             />
         ),
         
         4:(
             <InfoBox 
-            text="Looking for a senior developer who can own complex projects? Let's discuss how I can contribute to your team."
-            btnText="Get In Touch"
+            text={t('homeInfoStage4')}
+            btnText={t('homeInfoStage4Btn')}
             link="/contact"
             />
         ),

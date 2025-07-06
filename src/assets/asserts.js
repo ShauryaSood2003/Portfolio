@@ -151,8 +151,8 @@ export const skillsData = {
         { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", level: "Expert" },
         { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", level: "Advanced" },
         { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", level: "Expert" },
-        { name: "Three.js", icon: "https://global.discourse-cdn.com/standard17/uploads/threejs/original/2X/e/e4f86d2200d2d35c30f7b1494e96b9595ebc2751.png", level: "Intermediate" },
-        { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg", level: "Expert" },
+        { name: "Three.js", icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhUyPLMCrdBvL7byu5KkMnOssbQigrkiRxZw&s", level: "Intermediate" },
+        { name: "Tailwind CSS", icon: "https://avatars.githubusercontent.com/u/30317862?s=200&v=4", level: "Expert" },
         { name: "Redux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg", level: "Advanced" },
         { name: "Recoil", icon: "https://recoiljs.org/img/logo.svg", level: "Intermediate" },
         { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", level: "Expert" },
@@ -171,7 +171,7 @@ export const skillsData = {
         { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg", level: "Intermediate" },
         { name: "Cloudflare", icon: "https://img.icons8.com/color/48/000000/cloudflare.png", level: "Intermediate" },
         { name: "Postman", icon: "https://img.icons8.com/dusk/64/000000/postman-api.png", level: "Advanced" },
-        { name: "Capacitor", icon: "https://capacitorjs.com/assets/img/meta/capacitor-og.png", level: "Advanced" }
+        { name: "Capacitor", icon: "https://pbs.twimg.com/profile_images/1268235262641004544/OLW1xl7t_400x400.png", level: "Advanced" }
     ],
     aitools: [
         { name: "Claude AI", icon: "https://img.icons8.com/fluency/48/000000/chatbot.png", level: "Expert" },
