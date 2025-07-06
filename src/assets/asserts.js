@@ -101,7 +101,7 @@ export const projects=[
     },
     {
         title:"Nutrition App",
-        subTitle:"Web Health Application",
+        subTitle:"Empower Your Diet: Smart Food Nutrient Analyzer",
         duration:"Jun 2023 - Jun 2023",
         text:"This innovative app provides users with valuable nutritional information, including calories, proteins, salts, vitamins, and more, for various food items. Built with Node.js, EJS, Express, HTML, CSS, and Bootstrap, the Nutrition App delivers comprehensive data, empowering users to make informed decisions about their dietary choices.",
         link:"https://rowan-admitted-seeker.glitch.me/",

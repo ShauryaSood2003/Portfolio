@@ -84,7 +84,7 @@ const Nav=()=>{
                 {/* Background with native app styling */}
                 <div className={`shadow-[0_-1px_3px_rgba(0,0,0,0.1)] border-t transition-colors duration-300 ${
                     location.pathname === '/' 
-                        ? 'bg-blue-50/90 dark:bg-blue-950/30 border-blue-100 dark:border-blue-900' 
+                        ? 'bg-white/95 dark:bg-gray-900/95 border-gray-100 dark:border-gray-800' 
                         : 'bg-white dark:bg-gray-900 border-gray-100 dark:border-gray-800'
                 }`}>
                     {/* Safe area padding for modern phones */}
