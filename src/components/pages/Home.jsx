@@ -3,10 +3,13 @@ import { Suspense, useState } from "react";
 import Loader from "../Loader";
 import Island  from "../../models/Island";
 import Sky from "../../models/Sky";
+import NightSky from "../../models/nightSky";
 import Bird from "../../models/Bird";
 import Plane from "../../models/Plane";
 import HomeInfo from "../HomeInfo";
+import { useTheme } from "../../contexts/ThemeContext";
 const Home =()=>{
+    const { isDarkMode } = useTheme();
     const adjustIslandForScreenSize = () => {
         let screenScale, screenPosition;
     
@@ -50,7 +53,7 @@ const Home =()=>{
                 <directionalLight position={[1,1,1]} intensity={3}></directionalLight>
                 <ambientLight intensity={.5}></ambientLight>
                 <hemisphereLight skyColor="#b1e1ff" groundColor="#000000" intensity={1}></hemisphereLight>
-                <Sky isRotating={isRotating}></Sky>
+                {isDarkMode ? <NightSky isRotating={isRotating} /> : <Sky isRotating={isRotating} />}
                 <Bird></Bird>
                 <Island
                     position={islandPosition}

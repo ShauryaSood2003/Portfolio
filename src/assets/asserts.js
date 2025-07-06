@@ -63,9 +63,9 @@ export const projects=[
         ],
         metrics: {
             transactionSpeed: "<3s",
-            security: "2FA",
+            security: "Password",
             apis: "15+",
-            coverage: "Pan India"
+            coverage: "P2P"
         },
         role: "Full Stack Developer",
         liveLink: null,

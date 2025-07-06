@@ -72,15 +72,15 @@ const About =()=>{
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
                 <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-lg">
                   <h4 className="font-bold text-2xl text-blue-600 mb-2">25K+</h4>
-                  <p className="text-gray-700 dark:text-gray-300">{t('transactionsProcessed')}</p>
+                  <p className="text-gray-700 dark:text-gray-800">{t('transactionsProcessed')}</p>
                 </div>
                 <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-lg">
                   <h4 className="font-bold text-2xl text-green-600 mb-2">60K+</h4>
-                  <p className="text-gray-700 dark:text-gray-300">{t('activeUsers')}</p>
+                  <p className="text-gray-700 dark:text-gray-800">{t('activeUsers')}</p>
                 </div>
                 <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl shadow-lg">
                   <h4 className="font-bold text-2xl text-purple-600 mb-2">3-4x</h4>
-                  <p className="text-gray-700 dark:text-gray-300">{t('deliverySpeed')}</p>
+                  <p className="text-gray-700 dark:text-gray-800">{t('deliverySpeed')}</p>
                 </div>
               </div>
             </div>
