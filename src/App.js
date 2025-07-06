@@ -3,6 +3,7 @@ import Nav from "./components/Nav";
 import {Home,About,Project,Contact} from "./components/pages/page";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import AIAssistant from "./components/AIAssistant";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
               <Route path="/about" element={<About/>} />
               <Route path="/contact" element={<Contact/>} />
             </Routes>
+            <AIAssistant />
           </Router>
         </main>
       </LanguageProvider>

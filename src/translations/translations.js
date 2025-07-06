@@ -157,6 +157,21 @@ export const translations = {
     googleAuth: "Google authentication",
     persistentChat: "Persistent chat history",
     
+    // AI Assistant
+    aiAssistant: 'AI Assistant',
+    aiGreeting: "Hello! I'm your AI assistant powered by a custom RAG bot built from scratch by Shaurya using Gemini LLM. Ask me anything about his skills, projects, or experience! 🤖✨",
+    aiListening: 'Listening...',
+    aiSpeaking: 'Speaking...',
+    aiOnline: 'Online',
+    askQuestion: 'Ask me anything...',
+    enableVoice: 'Enable Voice',
+    disableVoice: 'Disable Voice',
+    startListening: 'Start Voice Input',
+    stopListening: 'Stop Listening',
+    minimize: 'Minimize',
+    expand: 'Expand',
+    sendMessage: 'Send',
+    
     // Common
     loading: 'Loading...',
     error: 'Error',
@@ -320,6 +335,21 @@ export const translations = {
     mediaSharing: "मीडिया और PDF शेयरिंग",
     googleAuth: "Google प्रमाणीकरण",
     persistentChat: "स्थायी चैट इतिहास",
+    
+    // AI Assistant
+    aiAssistant: 'AI सहायक',
+    aiGreeting: "नमस्ते! मैं शौर्या द्वारा Gemini LLM का उपयोग करके बनाए गए कस्टम RAG बॉट द्वारा संचालित आपका AI सहायक हूं। उनके कौशल, परियोजनाओं या अनुभव के बारे में कुछ भी पूछें! 🤖✨",
+    aiListening: 'सुन रहा है...',
+    aiSpeaking: 'बोल रहा है...',
+    aiOnline: 'ऑनलाइन',
+    askQuestion: 'अपना सवाल पूछें...',
+    enableVoice: 'आवाज़ सक्षम करें',
+    disableVoice: 'आवाज़ अक्षम करें',
+    startListening: 'वॉयस इनपुट शुरू करें',
+    stopListening: 'सुनना बंद करें',
+    minimize: 'छोटा करें',
+    expand: 'बड़ा करें',
+    sendMessage: 'भेजें',
     
     // Common
     loading: 'लोड हो रहा है...',

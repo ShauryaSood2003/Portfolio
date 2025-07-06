@@ -3,6 +3,8 @@ import { translations } from '../translations/translations';
 
 const LanguageContext = createContext();
 
+export { LanguageContext };
+
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
   if (!context) {
