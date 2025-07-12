@@ -58,11 +58,32 @@ const AIAssistant = () => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  // Format message content with basic markdown support
+  const formatMessage = (content) => {
+    if (!content) return '';
+    
+    // Escape HTML first, then apply formatting
+    let formatted = content
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold">$1</strong>') // Bold text
+      .replace(/\*(.*?)\*/g, '<em class="italic">$1</em>') // Italic text
+      .replace(/\n\n/g, '<br><br>') // Paragraph breaks
+      .replace(/\n/g, '<br>') // Line breaks
+      .replace(/`(.*?)`/g, '<code class="bg-gray-200 dark:bg-gray-600 px-1 py-0.5 rounded text-xs font-mono">$1</code>') // Inline code
+      .replace(/^#{1,6}\s*(.*?)$/gm, '<h3 class="font-bold text-base mt-2 mb-1">$1</h3>') // Headers
+      .replace(/^[-•]\s*(.*?)$/gm, '<div class="flex items-start gap-2 my-1"><span class="text-blue-500 mt-1">•</span><span>$1</span></div>') // List items
+      .replace(/^(\d+)\.\s*(.*?)$/gm, '<div class="flex items-start gap-2 my-1"><span class="text-blue-500 font-medium">$1.</span><span>$2</span></div>'); // Numbered lists
+    
+    return formatted;
+  };
+
   // API call to RAG bot
   const getAIResponse = async (message) => {
     try {
-      const response = await axios.post('http://localhost:8000/message', {
-        message: message,
+      const response = await axios.post('http://localhost:8000/question', {
+        question: message,
         language: language // Send current language context
       }, {
         timeout: 30000, // 30 seconds timeout
@@ -71,7 +92,7 @@ const AIAssistant = () => {
         }
       });
       
-      return response.data.response || response.data.message || 'Sorry, I received an empty response from the server.';
+      return response.data.answer || response.data.response || response.data.message || 'Sorry, I received an empty response from the server.';
     } catch (error) {
       console.error('API Error:', error);
       
@@ -118,9 +139,10 @@ const AIAssistant = () => {
       const assistantMessage = { type: 'assistant', content: response };
       setMessages(prev => [...prev, assistantMessage]);
       
-      // Speak the response if voice is enabled
-      if (voiceEnabled && synthRef.current) {
-        const utterance = new SpeechSynthesisUtterance(response);
+      // Speak the response if voice is enabled (strip HTML for TTS)
+      if (voiceEnabled && synthRef.current && response) {
+        const textResponse = response.replace(/<[^>]*>/g, ''); // Remove HTML tags for speech
+        const utterance = new SpeechSynthesisUtterance(textResponse);
         utterance.lang = language === 'hi' ? 'hi-IN' : 'en-US';
         utterance.onstart = () => setIsSpeaking(true);
         utterance.onend = () => setIsSpeaking(false);
@@ -282,7 +304,7 @@ const AIAssistant = () => {
                 )}
                 
                 <div
-                  className={`max-w-xs px-4 py-2 rounded-lg ${
+                  className={`max-w-sm lg:max-w-md px-4 py-3 rounded-lg ${
                     msg.type === 'user'
                       ? 'bg-blue-500 text-white'
                       : darkMode
@@ -290,7 +312,22 @@ const AIAssistant = () => {
                       : 'bg-white text-gray-800 border border-gray-200'
                   }`}
                 >
-                  {msg.content}
+                  {msg.type === 'assistant' ? (
+                    <div 
+                      className="text-sm leading-relaxed"
+                      style={{ 
+                        wordBreak: 'break-word',
+                        lineHeight: '1.5'
+                      }}
+                      dangerouslySetInnerHTML={{ 
+                        __html: formatMessage(msg.content)
+                      }}
+                    />
+                  ) : (
+                    <div className="text-sm leading-relaxed">
+                      {msg.content}
+                    </div>
+                  )}
                 </div>
                 
                 {msg.type === 'user' && (
@@ -314,7 +351,7 @@ const AIAssistant = () => {
                       <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
                     </div>
                     <span className={`text-xs ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                      Consulting Gemini via RAG bot...
+                      Consulting RAG bot about Shaurya...
                     </span>
                   </div>
                 </div>
@@ -327,7 +364,7 @@ const AIAssistant = () => {
           <div className={`p-4 ${darkMode ? 'bg-gray-700' : 'bg-white'} border-t ${darkMode ? 'border-gray-600' : 'border-gray-200'} flex-shrink-0`}>
             {/* Info banner */}
             <div className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'} text-center mb-3 px-2 py-1 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
-              💡 Powered by custom RAG bot • Built in-house by Shaurya
+              🤖 Custom RAG Bot • Powered by Gemini LLM • Built by Shaurya
             </div>
             
             <div className="flex items-center space-x-3">
