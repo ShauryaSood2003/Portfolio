@@ -79,7 +79,7 @@ const AIAssistant = () => {
     return formatted;
   };
 
-  // API call to RAG bot with language support
+  // API call to RAG bot with language support and fallback
   const getAIResponse = async (message) => {
     try {
       // Map frontend language codes to backend expected format
@@ -87,23 +87,43 @@ const AIAssistant = () => {
       const requestLanguage = language === 'hi' ? 'hindi' : 'english';
       console.log(`🌐 Sending request in ${requestLanguage} (frontend language: ${language})`);
       
-      const response = await axios.post('http://localhost:8000/question', {
+      const requestData = {
         question: message,
         language: requestLanguage // Backend expects 'english' or 'hindi'
-      }, {
+      };
+      
+      const requestConfig = {
         timeout: 30000, // 30 seconds timeout
         headers: {
           'Content-Type': 'application/json'
         }
-      });
-      
-      return response.data.answer || response.data.response || response.data.message || 'Sorry, I received an empty response from the server.';
+      };
+
+      // Try primary endpoint first (Render.com)
+      try {
+        console.log('🌐 Trying primary endpoint: rag-bot-api.onrender.com');
+        const response = await axios.post('https://rag-bot-api.onrender.com/question', requestData, requestConfig);
+        return response.data.answer || response.data.response || response.data.message || 'Sorry, I received an empty response from the server.';
+      } catch (primaryError) {
+        console.warn('❌ Primary endpoint failed, trying localhost fallback:', primaryError.message);
+        
+        // Fallback to localhost if primary fails
+        try {
+          console.log('🔄 Trying fallback endpoint: localhost:8000');
+          const response = await axios.post('http://localhost:8000/question', requestData, requestConfig);
+          return response.data.answer || response.data.response || response.data.message || 'Sorry, I received an empty response from the server.';
+        } catch (fallbackError) {
+          console.error('❌ Both endpoints failed:', { primary: primaryError.message, fallback: fallbackError.message });
+          // Throw the original error for consistent error handling below
+          throw primaryError;
+        }
+      }
     } catch (error) {
       console.error('API Error:', error);
       
       // Handle different error types with user-friendly messages
       if (error.code === 'ECONNREFUSED' || error.code === 'ERR_NETWORK') {
-        return `🔧 **Server is down - We'll be right back!**\n\nOur RAG bot endpoint is currently unavailable. The custom AI system built by Shaurya is temporarily offline. Please try again in a few moments! 🚀`;
+        return `🔧 **RAG Bot Temporarily Unavailable**\n\nBoth our primary (Render.com) and fallback (localhost) endpoints are currently unavailable. The custom AI system built by Shaurya is temporarily offline. Please try again in a few moments! 🚀`;
       } else if (error.code === 'ECONNABORTED') {
         return `⏱️ **Processing timeout**\n\nThe request took too long to process. Our Gemini LLM might be handling a complex query. Please try asking a simpler question or wait a moment and try again.`;
       } else if (error.response) {
