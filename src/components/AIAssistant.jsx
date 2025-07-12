@@ -79,12 +79,17 @@ const AIAssistant = () => {
     return formatted;
   };
 
-  // API call to RAG bot
+  // API call to RAG bot with language support
   const getAIResponse = async (message) => {
     try {
+      // Map frontend language codes to backend expected format
+      // Frontend: 'en' | 'hi' -> Backend: 'english' | 'hindi'
+      const requestLanguage = language === 'hi' ? 'hindi' : 'english';
+      console.log(`🌐 Sending request in ${requestLanguage} (frontend language: ${language})`);
+      
       const response = await axios.post('http://localhost:8000/question', {
         question: message,
-        language: language // Send current language context
+        language: requestLanguage // Backend expects 'english' or 'hindi'
       }, {
         timeout: 30000, // 30 seconds timeout
         headers: {
@@ -109,7 +114,9 @@ const AIAssistant = () => {
         if (status === 401 || status === 403) {
           return `🔑 **Sorry, LLM tokens expired!**\n\nOur Gemini LLM tokens have reached their limit. We'll be back online when the tokens are recharged! Please try again later. 🔋`;
         } else if (status === 429) {
-          return `🚦 **Rate limit exceeded**\n\nToo many requests at the moment. Our Gemini LLM needs a short break. Please wait a few seconds and try again! ⏰`;
+          return `🚦 **Daily quota exceeded**\n\nOur Gemini LLM has reached its daily request limit. The quota will reset tomorrow. Thank you for your understanding! ⏰`;
+        } else if (errorData?.detail && errorData.detail.includes('quota')) {
+          return `📊 **API Quota Limit Reached**\n\nThe Gemini LLM has exceeded its daily free tier quota. The service will be available again tomorrow when the quota resets. Thank you for trying out Shaurya's custom RAG bot! 🤖`;
         } else if (status === 500) {
           return `⚠️ **Internal server error**\n\nOur RAG bot encountered an internal issue. Don't worry, Shaurya will fix this soon! Please try again in a few minutes. 🛠️`;
         } else if (status === 503) {
@@ -351,7 +358,7 @@ const AIAssistant = () => {
                       <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
                     </div>
                     <span className={`text-xs ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                      Consulting RAG bot about Shaurya...
+                      {language === 'hi' ? 'शौर्य के बारे में RAG बॉट से परामर्श कर रहे हैं...' : 'Consulting RAG bot about Shaurya...'}
                     </span>
                   </div>
                 </div>
