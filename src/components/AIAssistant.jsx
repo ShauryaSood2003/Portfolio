@@ -5,6 +5,13 @@ import { ThemeContext } from '../contexts/ThemeContext';
 import { translations } from '../translations/translations';
 import { FaMicrophone, FaMicrophoneSlash, FaVolumeUp, FaVolumeMute, FaTimes, FaExpand, FaCompress } from 'react-icons/fa';
 
+const SUGGESTED_QUESTIONS = [
+  "What's Shaurya's work experience?",
+  "What tech stack does he use?",
+  "Tell me about the 91Springboard project",
+  "What are his key skills?",
+];
+
 const AIAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -14,19 +21,22 @@ const AIAssistant = () => {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [voiceEnabled, setVoiceEnabled] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
-  
+
   const { language } = useContext(LanguageContext);
   const { isDarkMode: darkMode } = useContext(ThemeContext);
   const t = translations[language] || translations.en;
-  
+
   const chatEndRef = useRef(null);
   const recognitionRef = useRef(null);
   const synthRef = useRef(null);
+  // Unique session per browser tab — prevents mixing conversation history across visitors
+  const sessionIdRef = useRef(`session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`);
 
-  // Initialize greeting message
+  // Set greeting only on first mount — language changes should NOT wipe the conversation
   useEffect(() => {
     setMessages([{ type: 'assistant', content: t.aiGreeting }]);
-  }, [t.aiGreeting]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Initialize speech recognition and synthesis
   useEffect(() => {
@@ -82,48 +92,34 @@ const AIAssistant = () => {
   // API call to RAG bot with language support and fallback
   const getAIResponse = async (message) => {
     try {
-      // Map frontend language codes to backend expected format
-      // Frontend: 'en' | 'hi' -> Backend: 'english' | 'hindi'
-      const requestLanguage = language === 'hi' ? 'hindi' : 'english';
-      console.log(`🌐 Sending request in ${requestLanguage} (frontend language: ${language})`);
-      
       const requestData = {
         question: message,
-        language: requestLanguage // Backend expects 'english' or 'hindi'
-      };
-      
-      const requestConfig = {
-        timeout: 30000, // 30 seconds timeout
-        headers: {
-          'Content-Type': 'application/json'
-        }
+        language: language === 'hi' ? 'hindi' : 'english',
+        session_id: sessionIdRef.current,
       };
 
-      // Try primary endpoint first (Render.com)
+      const requestConfig = {
+        timeout: 30000,
+        headers: { 'Content-Type': 'application/json' },
+      };
+
+      // Try HuggingFace Space first, fall back to localhost for dev
       try {
-        console.log('🌐 Trying primary endpoint: rag-bot-api.onrender.com');
-        const response = await axios.post('https://rag-bot-api.onrender.com/question', requestData, requestConfig);
-        return response.data.answer || response.data.response || response.data.message || 'Sorry, I received an empty response from the server.';
-      } catch (primaryError) {
-        console.warn('❌ Primary endpoint failed, trying localhost fallback:', primaryError.message);
-        
-        // Fallback to localhost if primary fails
+        const response = await axios.post('https://shauryasood293-ragbotserver.hf.space/question', requestData, requestConfig);
+        return response.data.answer || 'Sorry, I received an empty response from the server.';
+      } catch (hfError) {
         try {
-          console.log('🔄 Trying fallback endpoint: localhost:8000');
           const response = await axios.post('http://localhost:8000/question', requestData, requestConfig);
-          return response.data.answer || response.data.response || response.data.message || 'Sorry, I received an empty response from the server.';
-        } catch (fallbackError) {
-          console.error('❌ Both endpoints failed:', { primary: primaryError.message, fallback: fallbackError.message });
-          // Throw the original error for consistent error handling below
-          throw primaryError;
+          return response.data.answer || 'Sorry, I received an empty response from the server.';
+        } catch {
+          throw hfError;
         }
       }
     } catch (error) {
-      console.error('API Error:', error);
       
       // Handle different error types with user-friendly messages
       if (error.code === 'ECONNREFUSED' || error.code === 'ERR_NETWORK') {
-        return `🔧 **RAG Bot Temporarily Unavailable**\n\nBoth our primary (Render.com) and fallback (localhost) endpoints are currently unavailable. The custom AI system built by Shaurya is temporarily offline. Please try again in a few moments! 🚀`;
+        return `🔧 **RAG Bot Temporarily Unavailable**\n\nThe custom AI system built by Shaurya is temporarily offline. Please try again in a few moments! 🚀`;
       } else if (error.code === 'ECONNABORTED') {
         return `⏱️ **Processing timeout**\n\nThe request took too long to process. Our Gemini LLM might be handling a complex query. Please try asking a simpler question or wait a moment and try again.`;
       } else if (error.response) {
@@ -207,6 +203,23 @@ const AIAssistant = () => {
       synthRef.current.cancel();
       setIsSpeaking(false);
     }
+  };
+
+  const clearChat = () => {
+    setMessages([{ type: 'assistant', content: t.aiGreeting }]);
+  };
+
+  const handleSuggestedQuestion = (question) => {
+    setCurrentMessage(question);
+    // Use a short delay so state flushes before send
+    setTimeout(() => {
+      setMessages(prev => [...prev, { type: 'user', content: question }]);
+      setCurrentMessage('');
+      setIsTyping(true);
+      getAIResponse(question).then(response => {
+        setMessages(prev => [...prev, { type: 'assistant', content: response }]);
+      }).finally(() => setIsTyping(false));
+    }, 0);
   };
 
   return (
@@ -299,15 +312,27 @@ const AIAssistant = () => {
               </button>
               
               <button
+                onClick={clearChat}
+                className={`p-2 rounded-lg transition-all duration-300 text-xs font-medium ${darkMode
+                  ? 'bg-gray-600 text-gray-300 hover:bg-gray-500'
+                  : 'bg-gray-200 text-gray-600 hover:bg-gray-300'}`}
+                title="Clear chat"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
+              </button>
+
+              <button
                 onClick={() => setIsExpanded(!isExpanded)}
-                className={`p-2 rounded-lg transition-all duration-300 ${darkMode 
-                  ? 'bg-gray-600 text-gray-300 hover:bg-gray-500' 
+                className={`p-2 rounded-lg transition-all duration-300 ${darkMode
+                  ? 'bg-gray-600 text-gray-300 hover:bg-gray-500'
                   : 'bg-gray-200 text-gray-600 hover:bg-gray-300'}`}
                 title={isExpanded ? t.minimize : t.expand}
               >
                 {isExpanded ? <FaCompress className="w-4 h-4" /> : <FaExpand className="w-4 h-4" />}
               </button>
-              
+
               <button
                 onClick={() => setIsOpen(false)}
                 className="p-2 rounded-lg bg-red-500 text-white hover:bg-red-600 transition-all duration-300"
@@ -320,46 +345,57 @@ const AIAssistant = () => {
           {/* Messages */}
           <div className={`flex-1 overflow-y-auto px-4 py-4 space-y-4 ${darkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
             {messages.map((msg, index) => (
-              <div
-                key={index}
-                className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}
-              >
-                {msg.type === 'assistant' && (
-                  <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-sm mr-3 flex-shrink-0">
-                    🤖
+              <div key={index}>
+                <div className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}>
+                  {msg.type === 'assistant' && (
+                    <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-sm mr-3 flex-shrink-0">
+                      🤖
+                    </div>
+                  )}
+
+                  <div
+                    className={`max-w-sm lg:max-w-md px-4 py-3 rounded-lg ${
+                      msg.type === 'user'
+                        ? 'bg-blue-500 text-white'
+                        : darkMode
+                        ? 'bg-gray-700 text-white'
+                        : 'bg-white text-gray-800 border border-gray-200'
+                    }`}
+                  >
+                    {msg.type === 'assistant' ? (
+                      <div
+                        className="text-sm leading-relaxed"
+                        style={{ wordBreak: 'break-word', lineHeight: '1.5' }}
+                        dangerouslySetInnerHTML={{ __html: formatMessage(msg.content) }}
+                      />
+                    ) : (
+                      <div className="text-sm leading-relaxed">{msg.content}</div>
+                    )}
                   </div>
-                )}
-                
-                <div
-                  className={`max-w-sm lg:max-w-md px-4 py-3 rounded-lg ${
-                    msg.type === 'user'
-                      ? 'bg-blue-500 text-white'
-                      : darkMode
-                      ? 'bg-gray-700 text-white'
-                      : 'bg-white text-gray-800 border border-gray-200'
-                  }`}
-                >
-                  {msg.type === 'assistant' ? (
-                    <div 
-                      className="text-sm leading-relaxed"
-                      style={{ 
-                        wordBreak: 'break-word',
-                        lineHeight: '1.5'
-                      }}
-                      dangerouslySetInnerHTML={{ 
-                        __html: formatMessage(msg.content)
-                      }}
-                    />
-                  ) : (
-                    <div className="text-sm leading-relaxed">
-                      {msg.content}
+
+                  {msg.type === 'user' && (
+                    <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white text-sm ml-3 flex-shrink-0">
+                      👤
                     </div>
                   )}
                 </div>
-                
-                {msg.type === 'user' && (
-                  <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white text-sm ml-3 flex-shrink-0">
-                    👤
+
+                {/* Suggested questions — only after the first greeting message */}
+                {index === 0 && messages.length === 1 && msg.type === 'assistant' && !isTyping && (
+                  <div className="mt-3 ml-11 flex flex-wrap gap-2">
+                    {SUGGESTED_QUESTIONS.map((q, i) => (
+                      <button
+                        key={i}
+                        onClick={() => handleSuggestedQuestion(q)}
+                        className={`text-xs px-3 py-1.5 rounded-full border transition-all duration-200 hover:scale-105 text-left ${
+                          darkMode
+                            ? 'border-gray-600 bg-gray-700 text-gray-300 hover:bg-blue-600 hover:border-blue-500 hover:text-white'
+                            : 'border-gray-300 bg-white text-gray-600 hover:bg-blue-50 hover:border-blue-400 hover:text-blue-700'
+                        }`}
+                      >
+                        {q}
+                      </button>
+                    ))}
                   </div>
                 )}
               </div>
