@@ -30,8 +30,7 @@ const About =()=>{
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add("sho");
-            } else {
-              entry.target.classList.remove("sho");
+              observe.unobserve(entry.target);
             }
           });
         });
@@ -39,8 +38,7 @@ const About =()=>{
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add("ed_sho");
-            } else {
-              entry.target.classList.remove("ed_sho");
+              observeED.unobserve(entry.target);
             }
           });
         });
@@ -71,8 +69,8 @@ const About =()=>{
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
                 <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-lg">
-                  <h4 className="font-bold text-2xl text-blue-600 mb-2">25K+</h4>
-                  <p className="text-gray-700 dark:text-gray-800">{t('transactionsProcessed')}</p>
+                  <h4 className="font-bold text-2xl text-blue-600 mb-2">2+</h4>
+                  <p className="text-gray-700 dark:text-gray-800">Years Professional Experience</p>
                 </div>
                 <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-lg">
                   <h4 className="font-bold text-2xl text-green-600 mb-2">60K+</h4>
@@ -290,39 +288,6 @@ const About =()=>{
                     </div>
                 </div>
 
-                {/* Skills Summary */}
-                <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 mt-12">
-                    <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-6 text-center">{t('technologyProficiency')}</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="text-center">
-                            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                                <svg className="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                </svg>
-                            </div>
-                            <h4 className="font-bold text-lg text-green-800 dark:text-green-400 mb-1">{t('expertLevel')}</h4>
-                            <p className="text-gray-600 dark:text-gray-400 text-sm">{t('expertLevelDesc')}</p>
-                        </div>
-                        <div className="text-center">
-                            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                                <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                </svg>
-                            </div>
-                            <h4 className="font-bold text-lg text-blue-800 dark:text-blue-400 mb-1">{t('advanced')}</h4>
-                            <p className="text-gray-600 dark:text-gray-400 text-sm">{t('advancedDesc')}</p>
-                        </div>
-                        <div className="text-center">
-                            <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                                <svg className="w-8 h-8 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                                </svg>
-                            </div>
-                            <h4 className="font-bold text-lg text-yellow-800 dark:text-yellow-400 mb-1">{t('intermediate')}</h4>
-                            <p className="text-gray-600 dark:text-gray-400 text-sm">{t('intermediateDesc')}</p>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             

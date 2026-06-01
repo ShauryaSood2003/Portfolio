@@ -1,59 +1,86 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useLanguage } from "../contexts/LanguageContext";
 
-const InfoBox=({text,btnText,link})=>{
-    return(
+const TypewriterText = ({ text, speed = 42, className }) => {
+    const [displayed, setDisplayed] = useState('');
+    const [done, setDone] = useState(false);
+
+    useEffect(() => {
+        setDisplayed('');
+        setDone(false);
+        let i = 0;
+        const timer = setInterval(() => {
+            if (i < text.length) {
+                setDisplayed(text.slice(0, i + 1));
+                i++;
+            } else {
+                setDone(true);
+                clearInterval(timer);
+            }
+        }, speed);
+        return () => clearInterval(timer);
+    }, [text, speed]);
+
+    return (
+        <span className={className}>
+            {displayed}
+            {!done && <span className="animate-pulse opacity-80">|</span>}
+        </span>
+    );
+};
+
+const InfoBox = ({ text, btnText, link }) => {
+    return (
         <div className="info-box">
             <p className="font-medium sm:text-xl text-center">{text}</p>
             <Link to={link} className="neo-btn neo-brutalism-white">
                 {btnText}
-                <ArrowForwardIcon/>
+                <ArrowForwardIcon />
             </Link>
         </div>
     );
+};
 
-    
-}
-
-const HomeInfo=({currentStage})=>{
+const HomeInfo = ({ currentStage }) => {
     const { t } = useLanguage();
-    
-    const renderContent={
-        1:
-        (
-            <h1 
-                className="text-lg sm:text-xl sm:leading-snug text-center neo-brutalism-blue text-white py-3 sm:py-4 px-4 sm:px-8 mx-2 sm:mx-5"
-            >
-                {t('homeInfoGreeting')} <span className="font-bold">{t('homeInfoName')}</span> 
-                <br/>
-                <span className="text-xs sm:text-sm">{t('homeInfoTitle')}</span>
+
+    const renderContent = {
+        1: (
+            <h1 className="text-lg sm:text-xl sm:leading-snug text-center neo-brutalism-blue text-white py-3 sm:py-4 px-4 sm:px-8 mx-2 sm:mx-5">
+                {t('homeInfoGreeting')} <span className="font-bold">{t('homeInfoName')}</span>
+                <br />
+                <TypewriterText
+                    text={t('homeInfoTitle')}
+                    className="text-xs sm:text-sm"
+                />
             </h1>
         ),
-        2:(
-            <InfoBox 
-            text={t('homeInfoStage2')}
-            btnText={t('homeInfoStage2Btn')}
-            link="/about"
-            />
-            
-        ),
-        3:(
-            <InfoBox 
-            text={t('homeInfoStage3')}
-            btnText={t('homeInfoStage3Btn')}
-            link="/project"
+        2: (
+            <InfoBox
+                text={t('homeInfoStage2')}
+                btnText={t('homeInfoStage2Btn')}
+                link="/about"
             />
         ),
-        
-        4:(
-            <InfoBox 
-            text={t('homeInfoStage4')}
-            btnText={t('homeInfoStage4Btn')}
-            link="/contact"
+        3: (
+            <InfoBox
+                text={t('homeInfoStage3')}
+                btnText={t('homeInfoStage3Btn')}
+                link="/project"
             />
         ),
-    }
+        4: (
+            <InfoBox
+                text={t('homeInfoStage4')}
+                btnText={t('homeInfoStage4Btn')}
+                link="/contact"
+            />
+        ),
+    };
+
     return renderContent[currentStage] || null;
-}
+};
+
 export default HomeInfo;

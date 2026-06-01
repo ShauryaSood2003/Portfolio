@@ -15,14 +15,41 @@ export const projects=[
             users: "60K+",
             organizations: "29K+",
             dailyBookings: "1000+",
-            totalBookings: "30K+"
+            totalBookings: "2.5L+"
         },
         role: "Lead Developer",
         liveLink:"https://app.91springboard.com/",
         githubLink: null,
+        appStoreLink: "https://apps.apple.com/in/app/91springboard-workspaces/id6739865759",
+        playStoreLink: "https://play.google.com/store/apps/details?id=com.springboard91.www",
         type: "Client Work",
         color:"#fef3c7",
         logo:"https://alpha.91springboard.com/assets/logo91S_black-Bm-WvmqZ.png"
+    },
+    {
+        title:"VibeControls",
+        subTitle:"Mission Control for Developers",
+        duration:"2025 - Present",
+        description:"Built the full billing and monetization infrastructure for a developer platform offering centralized control over projects, remote environments, terminals, agents, and team collaboration.",
+        techStack: ["React", "Node.js", "PostgreSQL", "Stripe", "Razorpay", "AWS"],
+        features: [
+            "Billing, subscriptions & credit system",
+            "Stripe & Razorpay payment integration",
+            "Plans, addons & usage tracking",
+            "File, template & catalog management"
+        ],
+        metrics: {
+            agents: "Agents",
+            vibes: "Vibes",
+            tunnels: "Tunnels",
+            aiBuilder: "AI Builder"
+        },
+        role: "Full Stack Developer",
+        liveLink: "https://www.vibecontrols.com/",
+        githubLink: null,
+        type: "Company Product",
+        color:"#0f172a",
+        logo:"/vibecontrolsLogo.png"
     },
     {
         title:"CodeCrack",
@@ -36,12 +63,6 @@ export const projects=[
             "CodeWars 1v1 battles",
             "Token reward system"
         ],
-        metrics: {
-            languages: "5+",
-            executionTime: "<2s",
-            concurrent: "100+",
-            uptime: "99.9%"
-        },
         role: "Founder & Full Stack Developer",
         liveLink: null,
         githubLink:"https://github.com/ShauryaSood2003/CodeCrack",
@@ -61,12 +82,6 @@ export const projects=[
             "Merchant dashboard",
             "Real-time notifications"
         ],
-        metrics: {
-            transactionSpeed: "<3s",
-            security: "Password",
-            apis: "15+",
-            coverage: "P2P"
-        },
         role: "Full Stack Developer",
         liveLink: null,
         githubLink:"https://github.com/ShauryaSood2003/PayWay",
@@ -74,76 +89,6 @@ export const projects=[
         color:"#fcfdff",
         logo:"https://cdn.dribbble.com/users/1280935/screenshots/6974685/media/ec4c386222b837da0ff6eabec3f59ba3.gif"
     },
-    {
-        title:"ChatIo",
-        subTitle:"Real-time Messaging Platform",
-        duration:"Apr 2023 - Jun 2023",
-        description:"WhatsApp clone with real-time messaging, media sharing, and Google authentication. Full-stack implementation with modern tech stack.",
-        techStack: ["React", "Material UI", "Node.js", "Socket.IO", "MongoDB", "Google OAuth"],
-        features: [
-            "Real-time messaging",
-            "Media & PDF sharing",
-            "Google authentication",
-            "Persistent chat history"
-        ],
-        metrics: {
-            responseTime: "<100ms",
-            fileSize: "10MB",
-            concurrent: "50+",
-            uptime: "99%"
-        },
-        role: "Full Stack Developer",
-        liveLink:"https://shauryasoodchatio.netlify.app/",
-        githubLink: "https://github.com/ShauryaSood2003/ChatIo",
-        type: "Personal Project",
-        color:"#ebf8f6",
-        logo:"https://media.tenor.com/LAsl9TJCNH4AAAAC/whatsapp-chat.gif"
-    },
-    {
-        title:"Nutrition App",
-        subTitle:"Empower Your Diet: Smart Food Nutrient Analyzer",
-        duration:"Jun 2023 - Jun 2023",
-        text:"This innovative app provides users with valuable nutritional information, including calories, proteins, salts, vitamins, and more, for various food items. Built with Node.js, EJS, Express, HTML, CSS, and Bootstrap, the Nutrition App delivers comprehensive data, empowering users to make informed decisions about their dietary choices.",
-        link:"https://rowan-admitted-seeker.glitch.me/",
-        color:"#ebf8f6",
-        logo:"https://media.tenor.com/bj5M_AhN8DgAAAAC/fruits-dance.gif"
-    },
-    {
-        title:"Earlier Portfolio Showcase",
-        subTitle:"A Glimpse into Past Projects and Achievements",
-        duration:"2023-2023",
-        text:"This project section features my earlier portfolio, providing insights into the projects I undertook and the skills I developed. The portfolio encompasses a variety of projects in web development. Take a journey through the past to see the evolution of my skills and the diverse range of work I've contributed to over the years.",
-        link:"https://portfolioshaurya.netlify.app/",
-        color:"#f8f7f1",
-        logo:"https://i.ibb.co/sb7xjmW/myImage.png"
-    },
-    {
-        title:"Notes AppNotes App",
-        subTitle:"Simple Note App",
-        duration:"Mar 2023 - Apr 2023",
-        text:"My latest project - a dynamic and user-friendly React Notes App that simplifies the process of organizing thoughts, ideas, and important information. Built with React, this web application allows users to create multiple title-note pairs instantly and provides the ability to delete them effortlessly, streamlining the note-taking process like never before.",
-        link:"https://lzqwmd.csb.app/",
-        color:"#f3f3f3",
-        logo:"https://cdn.dribbble.com/users/3191392/screenshots/6437375/dribbble.gif"
-    },
-    {
-        title:"Ed-Tech Application",
-        subTitle:"Empowering Education Through Technology",
-        duration:"2023-2023",
-        text:"The goal of the Ed-Tech application is to enhance the educational journey for both students and educators. Explore the project to discover the impact of technology on education.",
-        link:"https://shauryacoderscave.netlify.app/",
-        color:"#f2f2f2",
-        logo:"https://media2.giphy.com/media/t9iZKlppouAANqFZQc/giphy.gif"
-    },
-    {
-        title:"Simon gameSimon game",
-        subTitle:"A fun to play Game",
-        duration:"Sep 2022 - Sep 2022",
-        text:"Introducing my latest web development project - an exciting Color Memory Challenge website created using HTML, CSS, and JavaScript. This captivating game puts your memory skills to the test as you remember and reproduce a sequence of colors that progressively becomes more challenging with each level.",
-        link:"https://shauryasood2003.github.io/click/",
-        color:"black",
-        logo:"https://media.tenor.com/_Nd94SyZ3vYAAAAC/windows-logo-zoom-in.gif"
-    }
 ]
 export const skillsData = {
     frontend: [
