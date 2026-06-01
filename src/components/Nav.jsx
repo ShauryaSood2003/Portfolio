@@ -45,9 +45,9 @@ const Nav=()=>{
                         )}
                     </button>
                     
-                    <a className="bg-black dark:bg-white text-white dark:text-black px-3 lg:px-5 py-2 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-200 text-sm lg:text-base" target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1OFBlwgfwMdbF2zXt9EGmwiTIe9GqG72R/view">
+                    <NavLink to="/resume" className={({isActive}) => `bg-black dark:bg-white text-white dark:text-black px-3 lg:px-5 py-2 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-200 text-sm lg:text-base ${isActive ? 'ring-2 ring-blue-500 ring-offset-1' : ''}`}>
                         {t('Resume', 'रिज़्यूमे')}
-                    </a>
+                    </NavLink>
                 </nav>
 
                 {/* Mobile Resume Button */}
@@ -68,14 +68,10 @@ const Nav=()=>{
                         )}
                     </button>
                     
-                    <a 
-                        className="bg-black dark:bg-white text-white dark:text-black px-3 py-2 rounded-lg text-xs font-medium hover:shadow-lg transition-all duration-200" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        href="https://drive.google.com/file/d/1OFBlwgfwMdbF2zXt9EGmwiTIe9GqG72R/view"
-                    >
+                    <NavLink to="/resume"
+                        className={({isActive}) => `bg-black dark:bg-white text-white dark:text-black px-3 py-2 rounded-lg text-xs font-medium hover:shadow-lg transition-all duration-200 ${isActive ? 'ring-2 ring-blue-500 ring-offset-1' : ''}`}>
                         {t('Resume', 'रिज़्यूमे')}
-                    </a>
+                    </NavLink>
                 </div>
             </header>
 
@@ -166,8 +162,8 @@ const Nav=()=>{
                                 )}
                             </NavLink>
                             
-                            <NavLink 
-                                to="/contact" 
+                            <NavLink
+                                to="/contact"
                                 className="group flex flex-col items-center py-2 px-4 min-w-0 flex-1"
                             >
                                 {({isActive}) => (
@@ -187,6 +183,31 @@ const Nav=()=>{
                                             isActive ? 'text-blue-600' : 'text-gray-500'
                                         }`}>
                                             {t('Contact', 'संपर्क')}
+                                        </span>
+                                    </>
+                                )}
+                            </NavLink>
+
+                            <NavLink
+                                to="/resume"
+                                className="group flex flex-col items-center py-2 px-4 min-w-0 flex-1"
+                            >
+                                {({isActive}) => (
+                                    <>
+                                        <div className={`relative mb-1 transition-all duration-300 ${isActive ? 'scale-110' : ''}`}>
+                                            <svg className={`w-6 h-6 transition-colors duration-200 ${
+                                                isActive ? 'text-blue-600' : 'text-gray-400'
+                                            }`} fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/>
+                                            </svg>
+                                            {isActive && (
+                                                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-blue-600 rounded-full animate-pulse"></div>
+                                            )}
+                                        </div>
+                                        <span className={`text-xs font-medium transition-colors duration-200 ${
+                                            isActive ? 'text-blue-600' : 'text-gray-500'
+                                        }`}>
+                                            {t('Resume', 'रिज़्यूमे')}
                                         </span>
                                     </>
                                 )}

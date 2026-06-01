@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
-import {Home,About,Project,Contact} from "./components/pages/page";
+import {Home,About,Project,Contact,Resume} from "./components/pages/page";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import AIAssistant from "./components/AIAssistant";
@@ -18,6 +18,7 @@ function App() {
               <Route path="/project" element={<Project/>} />
               <Route path="/about" element={<About/>} />
               <Route path="/contact" element={<Contact/>} />
+              <Route path="/resume" element={<Resume/>} />
             </Routes>
             <AIAssistant />
           </Router>
