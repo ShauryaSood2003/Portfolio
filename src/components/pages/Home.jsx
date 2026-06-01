@@ -68,7 +68,7 @@ const LoadingScreen = () => {
 
 // Mounts only after all Suspense siblings have resolved — signals scene is ready
 const SceneReady = ({ onReady }) => {
-    useEffect(() => { onReady(); }, []);
+    useEffect(() => { onReady(); }, [onReady]);
     return null;
 };
 
