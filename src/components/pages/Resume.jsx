@@ -70,15 +70,15 @@ const projects = [
     },
     {
         name: 'FluidGrids',
-        tag: 'Client Work',
+        tag: 'Company Product',
         url: 'https://www.fluidgrids.ai/',
-        desc: 'AI-powered visual workflow automation platform with drag-and-drop workflow builder, AI-generated nodes, SDK/CLI support, execution logs, observability, and RBAC-secured automations.',
+        desc: 'Workflow builder platform for designing, connecting, monitoring, and scaling business workflows through a visual canvas, node-based configuration, run tracking, and workspace access controls.',
     },
     {
         name: 'BigConsole',
-        tag: 'Client Work',
+        tag: 'Company Product',
         url: 'https://www.bigconsole.com/',
-        desc: 'AI business intelligence platform that turns plain-English prompts into governed dashboards with REST/SQL data connectors, live collaboration, RBAC, row-level security, and portable console definitions.',
+        desc: 'Big data dashboard platform for handling large datasets and converting them into interactive dashboards with charts, KPI widgets, tables, analytics views, and governed sharing.',
     },
     {
         name: 'CodeCrack',

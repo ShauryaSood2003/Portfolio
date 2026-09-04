@@ -53,51 +53,51 @@ export const projects=[
     },
     {
         title:"FluidGrids",
-        subTitle:"AI-Powered Workflow Automation",
+        subTitle:"Workflow Builder Platform",
         duration:"2026 - Present",
-        description:"Built and shipped an AI-powered visual workflow automation platform for designing, running, and scaling complex automation pipelines with custom nodes, SDKs, CLI tooling, and enterprise observability.",
-        techStack: ["React", "Node.js", "TypeScript", "REST APIs", "GraphQL", "Workflow Engine", "RBAC"],
+        description:"Built a workflow builder platform that helps teams design, connect, monitor, and scale business workflows through a visual canvas instead of scattered scripts and manual handoffs.",
+        techStack: ["React", "Node.js", "TypeScript", "Workflow Builder", "Visual Canvas", "Automation", "RBAC"],
         features: [
-            "Visual drag-and-drop workflow builder",
-            "AI node and workflow generation",
-            "Custom nodes, SDKs and CLI tooling",
-            "Execution logs, debugging and observability"
+            "Visual workflow builder canvas",
+            "Node-based workflow configuration",
+            "Workflow run monitoring",
+            "Team access and workspace controls"
         ],
         metrics: {
             builder: "Canvas",
-            aiNodes: "AI Nodes",
-            apis: "REST/GraphQL",
-            security: "RBAC"
+            workflows: "Workflows",
+            nodes: "Nodes",
+            access: "RBAC"
         },
         role: "Full Stack Developer",
         liveLink: "https://www.fluidgrids.ai/",
         githubLink: null,
-        type: "Client Work",
+        type: "Company Product",
         color:"#e0f2fe",
         logo:"https://www.fluidgrids.ai/images/logo.png"
     },
     {
         title:"BigConsole",
-        subTitle:"AI-Powered Business Intelligence",
+        subTitle:"Big Data Dashboard Platform",
         duration:"2026 - Present",
-        description:"Built an AI-first business intelligence platform that turns plain-English prompts into governed dashboards with data-source connectors, live collaboration, RBAC, row-level security, and portable dashboard definitions.",
-        techStack: ["React", "Node.js", "TypeScript", "SQL", "REST APIs", "Dashboard Builder", "RBAC"],
+        description:"Built a platform for handling large datasets and turning them into interactive dashboards, helping teams analyze operational and business data from one centralized console.",
+        techStack: ["React", "Node.js", "TypeScript", "Big Data", "Dashboard Builder", "Data Visualization", "RBAC"],
         features: [
-            "Prompt-to-dashboard generation",
-            "No-code visual console builder",
-            "REST, SQL and SaaS data connectors",
-            "Governed sharing with RBAC and audit trails"
+            "Interactive dashboard builder",
+            "Large dataset handling",
+            "Charts, tables and KPI widgets",
+            "Governed dashboard sharing"
         ],
         metrics: {
-            generation: "60 sec",
             dashboards: "Consoles",
-            data: "REST/SQL",
-            security: "RBAC"
+            data: "Big Data",
+            insights: "Analytics",
+            access: "RBAC"
         },
         role: "Full Stack Developer",
         liveLink: "https://www.bigconsole.com/",
         githubLink: null,
-        type: "Client Work",
+        type: "Company Product",
         color:"#dbeafe",
         logo:"https://www.bigconsole.com/logo.png"
     },

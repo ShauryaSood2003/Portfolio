@@ -53,19 +53,19 @@ export const portfolioKnowledge = {
     },
     "fluidgrids": {
       title: "FluidGrids",
-      type: "Client Work",
-      description: "AI-powered visual workflow automation platform",
-      technologies: ["React", "Node.js", "TypeScript", "REST APIs", "GraphQL"],
-      features: ["Drag-and-drop workflow builder", "AI node generation", "SDK and CLI tooling", "Execution logs and observability"],
-      impact: "Helps teams convert manual processes into scalable, governed automation pipelines"
+      type: "Company Product",
+      description: "Workflow builder platform for designing and managing business workflows",
+      technologies: ["React", "Node.js", "TypeScript", "Workflow Builder", "Visual Canvas"],
+      features: ["Visual workflow canvas", "Node-based workflow configuration", "Workflow run monitoring", "Workspace access controls"],
+      impact: "Helps teams replace manual handoffs and scattered scripts with structured, trackable workflows"
     },
     "bigconsole": {
       title: "BigConsole",
-      type: "Client Work",
-      description: "AI-powered business intelligence and dashboard platform",
-      technologies: ["React", "Node.js", "TypeScript", "SQL", "REST APIs"],
-      features: ["Prompt-to-dashboard generation", "REST and SQL data connectors", "Real-time collaboration", "RBAC and row-level security"],
-      impact: "Turns business questions into governed, shareable dashboards for faster data-driven decisions"
+      type: "Company Product",
+      description: "Big data dashboard platform for analyzing business and operational data",
+      technologies: ["React", "Node.js", "TypeScript", "Big Data", "Data Visualization"],
+      features: ["Large dataset handling", "Interactive dashboard builder", "Charts, tables and KPI widgets", "Governed dashboard sharing"],
+      impact: "Helps teams analyze large volumes of data through centralized dashboards and actionable visual insights"
     },
     "payway": {
       title: "PayWay",
