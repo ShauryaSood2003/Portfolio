@@ -51,6 +51,22 @@ export const portfolioKnowledge = {
       features: ["Multi-language support", "1v1 battles", "Real-time compilation"],
       impact: "Enhanced developer learning through gamification"
     },
+    "fluidgrids": {
+      title: "FluidGrids",
+      type: "Client Work",
+      description: "AI-powered visual workflow automation platform",
+      technologies: ["React", "Node.js", "TypeScript", "REST APIs", "GraphQL"],
+      features: ["Drag-and-drop workflow builder", "AI node generation", "SDK and CLI tooling", "Execution logs and observability"],
+      impact: "Helps teams convert manual processes into scalable, governed automation pipelines"
+    },
+    "bigconsole": {
+      title: "BigConsole",
+      type: "Client Work",
+      description: "AI-powered business intelligence and dashboard platform",
+      technologies: ["React", "Node.js", "TypeScript", "SQL", "REST APIs"],
+      features: ["Prompt-to-dashboard generation", "REST and SQL data connectors", "Real-time collaboration", "RBAC and row-level security"],
+      impact: "Turns business questions into governed, shareable dashboards for faster data-driven decisions"
+    },
     "payway": {
       title: "PayWay",
       type: "Fintech Platform",
@@ -78,7 +94,7 @@ export const portfolioKnowledge = {
       "3D web development expertise",
       "Multilingual application development"
     ],
-    industries: ["Coworking", "Fintech", "Gaming", "Communication"]
+    industries: ["Coworking", "Workflow Automation", "Business Intelligence", "Fintech", "Gaming", "Communication"]
   },
 
   // Portfolio Features
@@ -133,7 +149,8 @@ export const questionPatterns = {
   
   projects: [
     /project/i, /work/i, /portfolio/i, /application/i, /app/i, /website/i,
-    /91springboard/i, /codecrack/i, /payway/i, /chatio/i, /built/i, /created/i,
+    /91springboard/i, /fluidgrids/i, /fluid grids/i, /bigconsole/i, /big console/i,
+    /codecrack/i, /payway/i, /chatio/i, /built/i, /created/i,
     /developed/i, /example/i
   ],
   

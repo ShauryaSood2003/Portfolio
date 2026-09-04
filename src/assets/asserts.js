@@ -52,6 +52,56 @@ export const projects=[
         logo:"/vibecontrolsLogo.png"
     },
     {
+        title:"FluidGrids",
+        subTitle:"AI-Powered Workflow Automation",
+        duration:"2026 - Present",
+        description:"Built and shipped an AI-powered visual workflow automation platform for designing, running, and scaling complex automation pipelines with custom nodes, SDKs, CLI tooling, and enterprise observability.",
+        techStack: ["React", "Node.js", "TypeScript", "REST APIs", "GraphQL", "Workflow Engine", "RBAC"],
+        features: [
+            "Visual drag-and-drop workflow builder",
+            "AI node and workflow generation",
+            "Custom nodes, SDKs and CLI tooling",
+            "Execution logs, debugging and observability"
+        ],
+        metrics: {
+            builder: "Canvas",
+            aiNodes: "AI Nodes",
+            apis: "REST/GraphQL",
+            security: "RBAC"
+        },
+        role: "Full Stack Developer",
+        liveLink: "https://www.fluidgrids.ai/",
+        githubLink: null,
+        type: "Client Work",
+        color:"#e0f2fe",
+        logo:"https://www.fluidgrids.ai/images/logo.png"
+    },
+    {
+        title:"BigConsole",
+        subTitle:"AI-Powered Business Intelligence",
+        duration:"2026 - Present",
+        description:"Built an AI-first business intelligence platform that turns plain-English prompts into governed dashboards with data-source connectors, live collaboration, RBAC, row-level security, and portable dashboard definitions.",
+        techStack: ["React", "Node.js", "TypeScript", "SQL", "REST APIs", "Dashboard Builder", "RBAC"],
+        features: [
+            "Prompt-to-dashboard generation",
+            "No-code visual console builder",
+            "REST, SQL and SaaS data connectors",
+            "Governed sharing with RBAC and audit trails"
+        ],
+        metrics: {
+            generation: "60 sec",
+            dashboards: "Consoles",
+            data: "REST/SQL",
+            security: "RBAC"
+        },
+        role: "Full Stack Developer",
+        liveLink: "https://www.bigconsole.com/",
+        githubLink: null,
+        type: "Client Work",
+        color:"#dbeafe",
+        logo:"https://www.bigconsole.com/logo.png"
+    },
+    {
         title:"CodeCrack",
         subTitle:"Competitive Coding Platform",
         duration:"May 2024 - Present",

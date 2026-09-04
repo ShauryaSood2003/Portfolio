@@ -69,6 +69,18 @@ const projects = [
         desc: 'Built complete billing & monetization infrastructure — subscriptions, credits, addons, plans, Stripe & Razorpay payments, usage tracking, file/template/catalog management.',
     },
     {
+        name: 'FluidGrids',
+        tag: 'Client Work',
+        url: 'https://www.fluidgrids.ai/',
+        desc: 'AI-powered visual workflow automation platform with drag-and-drop workflow builder, AI-generated nodes, SDK/CLI support, execution logs, observability, and RBAC-secured automations.',
+    },
+    {
+        name: 'BigConsole',
+        tag: 'Client Work',
+        url: 'https://www.bigconsole.com/',
+        desc: 'AI business intelligence platform that turns plain-English prompts into governed dashboards with REST/SQL data connectors, live collaboration, RBAC, row-level security, and portable console definitions.',
+    },
+    {
         name: 'CodeCrack',
         tag: 'Personal',
         url: 'https://github.com/ShauryaSood2003/CodeCrack',
@@ -264,7 +276,7 @@ const Resume = () => {
                                                 <span className="px-2 py-0.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded-full text-[10px] font-semibold">{proj.tag}</span>
                                                 {proj.url && (
                                                     <a href={proj.url} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors">
-                                                        <GitHubIcon style={{ fontSize: 14 }} />
+                                                        <OpenInNewIcon style={{ fontSize: 14 }} />
                                                     </a>
                                                 )}
                                             </div>
