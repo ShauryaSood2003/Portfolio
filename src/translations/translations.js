@@ -16,18 +16,18 @@ export const translations = {
     // HomeInfo component
     homeInfoGreeting: "Hi, I'm",
     homeInfoName: "Shaurya Sood",
-    homeInfoTitle: " Full Stack Developer | Building Scalable SaaS Solutions",
+    homeInfoTitle: "Senior Full Stack Developer | Building Scalable SaaS Solutions",
     homeInfoStage2: "From intern to core product owner in 12 months. I deliver high-scale products end-to-end with modern tech stacks.",
     homeInfoStage2Btn: "Explore My Journey",
     homeInfoStage3: "Led production systems processing more 25K+ bookings. Used by the organizations like Google, Amazon & Flipkart.",
     homeInfoStage3Btn: "View My Work",
-    homeInfoStage4: "Looking for a  developer who can own complex projects? Let's discuss how I can contribute to your team.",
+    homeInfoStage4: "Looking for a senior developer who can own complex projects? Let's discuss how I can contribute to your team.",
     homeInfoStage4Btn: "Get In Touch",
     
     // About page
     aboutTitle: 'About Me',
     aboutGreeting: "Hey, I'm Shaurya Sood",
-    aboutIntro: ' Full Stack Developer with a passion for building scalable SaaS solutions. In just 12 months, I progressed from intern to core product owner, delivering high-impact applications processing thousands of transactions daily.',
+    aboutIntro: 'Senior Full Stack Developer with a passion for building scalable SaaS solutions. In just 12 months, I progressed from intern to core product owner, delivering high-impact applications processing thousands of transactions daily.',
     transactionsProcessed: 'Transactions Processed',
     activeUsers: 'Active Users Served',
     deliverySpeed: 'Delivery Speed with AI',
@@ -37,7 +37,7 @@ export const translations = {
     education: 'Education',
     
     // Experience titles
-    seniorFullStackDev: 'Junior Full Stack Developer',
+    seniorFullStackDev: 'Senior Full Stack Developer',
     juniorFullStackDev: 'Junior Full Stack Developer',
     fullStackIntern: 'Full Stack Developer Intern',
     present: 'Present',

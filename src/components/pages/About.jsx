@@ -91,7 +91,7 @@ const About =()=>{
                         <div className="flex justify-between items-start mb-4">
                             <div>
                                 <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200">{t('seniorFullStackDev')}</h3>
-                                {/* <p className="text-lg text-blue-600 font-medium">BurdenOff</p> */}
+                                <p className="text-lg text-blue-600 font-medium">BurdenOff</p>
                             </div>
                             <span className="text-gray-600 dark:text-gray-400 font-medium">May 2025 - {t('present')}</span>
                         </div>
@@ -106,7 +106,7 @@ const About =()=>{
                         <div className="flex justify-between items-start mb-4">
                             <div>
                                 <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200">{t('juniorFullStackDev')}</h3>
-                                {/* <p className="text-lg text-green-600 font-medium">BurdenOff</p> */}
+                                <p className="text-lg text-green-600 font-medium">BurdenOff</p>
                             </div>
                             <span className="text-gray-600 dark:text-gray-400 font-medium">Nov 2024 - Apr 2025</span>
                         </div>
@@ -121,7 +121,7 @@ const About =()=>{
                         <div className="flex justify-between items-start mb-4">
                             <div>
                                 <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200">{t('fullStackIntern')}</h3>
-                                {/* <p className="text-lg text-purple-600 font-medium">BurdenOff</p> */}
+                                <p className="text-lg text-purple-600 font-medium">BurdenOff</p>
                             </div>
                             <span className="text-gray-600 dark:text-gray-400 font-medium">Jul 2024 - Oct 2024</span>
                         </div>

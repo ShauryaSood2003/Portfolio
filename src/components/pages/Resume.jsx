@@ -19,24 +19,23 @@ const skills = {
 };
 
 const experience = [
-    // {
-    //     role: 'Senior Full Stack Developer',
-    //     company: 'BurdenOff',
-    //     companyUrl: 'https://burdenoff.com/',
-    //     period: 'May 2025 – Present',
-    //     color: 'border-blue-500',
-    //     badge: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
-    //     points: [
-    //         'Leading development of a cross-platform application for enterprise clients.',
-    //         'Building an AI-powered SaaS platform from scratch, including backend architecture and frontend interfaces.',
-    //     ],
-    // },
+    {
+        role: 'Senior Full Stack Developer',
+        company: 'BurdenOff',
+        companyUrl: 'https://burdenoff.com/',
+        period: 'May 2025 – Present',
+        color: 'border-blue-500',
+        badge: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
+        points: [
+            'Leading development of a cross-platform application for enterprise clients.',
+            'Building an AI-powered SaaS platform from scratch, including backend architecture and frontend interfaces.',
+        ],
+    },
     {
         role: 'Junior Full Stack Developer',
-        // company: 'BurdenOff',
-        // companyUrl: 'https://burdenoff.com/',
-        // period: 'Nov 2024 – Apr 2025',
-        period: 'May 2025 – May 2026',
+        company: 'BurdenOff',
+        companyUrl: 'https://burdenoff.com/',
+        period: 'Nov 2024 – Apr 2025',
         color: 'border-green-500',
         badge: 'bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300',
         points: [
@@ -46,10 +45,9 @@ const experience = [
     },
     {
         role: 'Full Stack Developer Intern',
-        // company: 'BurdenOff',
-        // companyUrl: 'https://burdenoff.com/',
-        // period: 'Jul 2024 – Oct 2024',
-        period: 'Jul 2024 – Apr 2025', //intern
+        company: 'BurdenOff',
+        companyUrl: 'https://burdenoff.com/',
+        period: 'Jul 2024 – Oct 2024',
         color: 'border-purple-500',
         badge: 'bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300',
         points: [
